@@ -1,0 +1,26 @@
+{
+  "name": "portfolio-website",
+  "version": "1.0.0",
+  "description": "A personal brand website for Damyant Jain",
+  "main": "App.js",
+  "scripts": {
+    "test": "jest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/damyantjain/portfolio-website.git"
+  },
+  "author": "Damyant Jain",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/damyantjain/portfolio-website/issues"
+  },
+  "homepage": "https://github.com/damyantjain/portfolio-website#readme",
+  "devDependencies": {
+    "parcel": "^2.12.0"
+  },
+  "dependencies": {
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1"
+  }
+}
