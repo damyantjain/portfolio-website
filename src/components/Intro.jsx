@@ -1,4 +1,6 @@
 import profileImage from "./../assets/profile.jpg";
+import Typewriter from 'typewriter-effect';
+
 
 const Intro = () => {
   return (
@@ -9,9 +11,16 @@ const Intro = () => {
           <div className="font-poppins align-middle text-center lg:pb-8 pb-4 text-6xl font-bold text-[#333333] leading-tight lg:leading-normal">
             Damyant Jain
           </div>
-          <h3 className="lg:pb-8 pb-4 tracking-wider font-poppins text-4xl font-bold text-[#e53939]">
-            Programmer
-          </h3>
+          <div className="lg:pb-8 pb-4 tracking-wider font-poppins text-4xl font-bold text-[#e53939]">
+            <Typewriter
+              options={{
+                strings: ["Programmer", "Developer", "Student", "Innovator", "Curious"],
+                autoStart: true,
+                loop: true,
+                deleteSpeed: 50,
+              }}
+            />
+          </div>
           <div className="align-middle text-center font-poppins  text-[#333333]">
             I'm all about turning cool ideas into awesome products and exploring
             the ever-evolving tech world. With over 3 years of experience under
