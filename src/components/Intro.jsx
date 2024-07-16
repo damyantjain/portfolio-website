@@ -31,7 +31,7 @@ const Intro = () => {
         {/* My photo */}
         <div className="p-5 w-full pt-20 lg:pt-0 lg:w-4/12 flex justify-center items-center">
           <img
-            className="rounded-full drop-shadow-xl object-cover shadow-slate-500 h-56 w-56 lg:h-72 lg:w-72"
+            className="rounded-full shadow-2xl object-cover shadow-slate-500 h-56 w-56 lg:h-72 lg:w-72"
             src={profileImage}
             alt="Damyant Jain"
           />
