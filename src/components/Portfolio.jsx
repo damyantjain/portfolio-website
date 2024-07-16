@@ -10,11 +10,11 @@ const Portfolio = () => {
       <div className="h-screen bg-[#f0f4f4] flex justify-center items-center">
         <div className="flex flex-col lg:flex-row lg:mx-24 lg:gap-4">
           {/* About Me */}
-          <div className="w-full lg:w-8/12 flex flex-col items-center justify-center px-16 pt-10">
-            <div className="font-poppins align-middle text-center mb-8 text-6xl font-bold text-[#333333]">
+          <div className="px-10 w-full lg:w-8/12 flex flex-col items-center justify-center">
+            <div className="font-poppins align-middle text-center lg:pb-8 pb-4 text-6xl font-bold text-[#333333]">
               Damyant Jain
             </div>
-            <h3 className="mb-8 tracking-wider font-poppins text-4xl font-bold text-[#e53939]">
+            <h3 className="lg:pb-8 pb-4 tracking-wider font-poppins text-4xl font-bold text-[#e53939]">
               Programmer
             </h3>
             <div className="align-middle text-center font-poppins  text-[#333333]">
@@ -25,9 +25,9 @@ const Portfolio = () => {
             </div>
           </div>
           {/* My photo */}
-          <div className="p-5 w-full lg:w-4/12 flex justify-center items-center">
+          <div className="p-5 w-full pt-20 lg:pt-0 lg:w-4/12 flex justify-center items-center">
             <img
-              className="rounded-full drop-shadow-xl object-cover shadow-slate-500 h-72 w-72 "
+              className="rounded-full drop-shadow-xl object-cover shadow-slate-500 h-56 w-56 lg:h-72 lg:w-72"
               src={profileImage}
               alt="Damyant Jain"
             />
