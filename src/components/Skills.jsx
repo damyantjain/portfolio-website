@@ -1,6 +1,53 @@
-import skills from "../db/skills";
-
 const Skills = () => {
+  const skillList = [
+    {
+      title: "Languages",
+      skills: ["JavaScript", "C#", "Java", "Python"],
+    },
+    {
+      title: "Web Development",
+      skills: [
+        "React.js",
+        "Node.js",
+        "HTML",
+        "CSS",
+        "Bootstrap",
+        "JavaScript",
+        "TypeScript",
+      ],
+    },
+    {
+      title: "Cloud and Tools",
+      skills: [
+        "AWS",
+        "Azure DevOps",
+        "Azure Portal",
+        "Visual Studio",
+        "MSSM",
+        "IntelliJ",
+      ],
+    },
+    {
+      title: "Database",
+      skills: ["MySQL", "MongoDB", "Microsoft SQL Server", "MongoDB"],
+    },
+    {
+      title: "Frameworks",
+      skills: [
+        "OOP",
+        "MAUI",
+        "MVVM",
+        "MVC",
+        "Xamarin.Forms",
+        ".NET",
+        "Spring",
+        "Agile",
+        "Scrum",
+        "Sprint",
+        "Junit",
+      ],
+    },
+  ];
 
   return (
     <div className="mt-20 md:mt-32">
@@ -8,7 +55,7 @@ const Skills = () => {
         Skills & Technologies
       </div>
       <div className="mt-4 md:mt-20">
-        {skills.map((skillCategory, index) => (
+        {skillList.map((skillCategory, index) => (
           <div key={index} className="mb-10">
             <div className="flex flex-col md:flex-row gap-4">
               <div className="md:w-4/12 lg:w-3/12">
