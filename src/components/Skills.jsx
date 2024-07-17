@@ -50,7 +50,7 @@ const Skills = () => {
   ];
 
   return (
-    <div className="mt-10 md:mt-32">
+    <div className="mt-20 md:mt-32">
       <div className="align-middle text-center font-poppins text-4xl font-bold text-[#333333]">
         Skills & Technologies
       </div>

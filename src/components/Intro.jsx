@@ -8,10 +8,10 @@ const Intro = () => {
       <div className="flex flex-col lg:flex-row lg:mx-24 lg:gap-4">
         {/* About Me */}
         <div className="px-10 w-full lg:w-8/12 flex flex-col items-center justify-center">
-          <div className="font-poppins align-middle text-center lg:pb-8 pb-4 text-6xl font-bold text-[#333333] leading-tight lg:leading-normal">
+          <div className="font-poppins align-middle text-center lg:pb-8 pb-4 text-4xl md:text-6xl font-bold text-[#333333] leading-tight lg:leading-normal">
             Damyant Jain
           </div>
-          <div className="lg:pb-8 pb-4 tracking-wider font-poppins text-4xl font-bold text-[#e53939]">
+          <div className="lg:pb-8 pb-4 tracking-wider font-poppins text-2xl md:text-4xl font-bold text-[#e53939]">
             <Typewriter
               options={{
                 strings: ["Programmer", "Developer", "Student", "Innovator", "Curious"],
