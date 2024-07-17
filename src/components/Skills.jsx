@@ -1,54 +1,9 @@
-const Skills = () => {
-  const skillList = [
-    {
-      title: "Languages",
-      skills: ["JavaScript", "C#", "Java", "Python"],
-    },
-    {
-      title: "Web Development",
-      skills: [
-        "React.js",
-        "Node.js",
-        "HTML",
-        "CSS",
-        "Bootstrap",
-        "JavaScript",
-        "TypeScript",
-      ],
-    },
-    {
-      title: "Cloud and Tools",
-      skills: [
-        "AWS",
-        "Azure DevOps",
-        "Azure Portal",
-        "Visual Studio",
-        "MSSM",
-        "IntelliJ",
-      ],
-    },
-    {
-      title: "Database",
-      skills: ["MySQL", "MongoDB", "Microsoft SQL Server", "MongoDB"],
-    },
-    {
-      title: "Frameworks",
-      skills: [
-        "OOP",
-        "MAUI",
-        "MVVM",
-        "MVC",
-        "Xamarin.Forms",
-        ".NET",
-        "Spring",
-        "Agile",
-        "Scrum",
-        "Sprint",
-        "Junit",
-      ],
-    },
-  ];
+import React from "react";
+import skillList from "../db/skills";
+import TechIcons from "./TechIcons";
 
+const Skills = () => {
+  
   return (
     <div className="mt-20 md:mt-32">
       <div className="align-middle text-center font-poppins text-4xl font-bold text-[#333333]">
@@ -66,8 +21,8 @@ const Skills = () => {
               <div className="md:w-8/12 lg:w-9/12">
                 <div className="flex flex-wrap">
                   {skillCategory.skills.map((skill, skillIndex) => (
-                    <div key={skillIndex} className="mr-4">
-                      {skill}
+                    <div key={skillIndex} className="mr-4 flex items-center">
+                      <TechIcons imageUrlName={skill.imageUrlName} name={skill.name} />
                     </div>
                   ))}
                 </div>
@@ -79,4 +34,5 @@ const Skills = () => {
     </div>
   );
 };
+
 export default Skills;
