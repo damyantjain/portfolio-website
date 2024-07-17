@@ -2,52 +2,79 @@ const Skills = () => {
   const skillList = [
     {
       title: "Languages",
-      skills: ["JavaScript", "C#", "Java", "Python", "TypeScript"],
+      skills: ["JavaScript", "C#", "Java", "Python"],
     },
     {
-      title: "Frontend",
+      title: "Web Development",
       skills: [
+        "React.js",
+        "Node.js",
         "HTML",
         "CSS",
-        "JavaScript",
-        "React",
-        "Next.js",
-        "Tailwind CSS",
         "Bootstrap",
+        "JavaScript",
+        "TypeScript",
       ],
     },
     {
-      title: "Backend",
-      skills: ["Node.js", "Express", "MongoDB", "Firebase", "RESTful APIs"],
+      title: "Cloud and Tools",
+      skills: [
+        "AWS",
+        "Azure DevOps",
+        "Azure Portal",
+        "Visual Studio",
+        "MSSM",
+        "IntelliJ",
+      ],
     },
     {
-      title: "Tools",
-      skills: ["Git", "GitHub", "VS Code", "Figma", "Photoshop", "Illustrator"],
+      title: "Database",
+      skills: ["MySQL", "MongoDB", "Microsoft SQL Server", "MongoDB"],
+    },
+    {
+      title: "Frameworks",
+      skills: [
+        "OOP",
+        "MAUI",
+        "MVVM",
+        "MVC",
+        "Xamarin.Forms",
+        ".NET",
+        "Spring",
+        "Agile",
+        "Scrum",
+        "Sprint",
+        "Junit",
+      ],
     },
   ];
 
   return (
     <div className="mt-10 md:mt-32">
-      <div className="align-middle text-center font-poppins text-4xl font-bold text-[#333333]">
+      <div className="align-middle text-center font-poppins text-4xl mb-10 font-bold text-[#333333]">
         Skills & Technologies
       </div>
       <div>
-        {skillList.map((skillCategory, index) => {
-          return (
-            <div key={index} className="flex">
-              <div className="w-3/12 bg-slate-300">
-                <div>{skillCategory.title}</div>
+        {skillList.map((skillCategory, index) => (
+          <div key={index} className="mb-10">
+            <div className="flex flex-col md:flex-row gap-4">
+              <div className="md:w-3/12">
+                <div className="font-poppins font-bold text-[#333333] text-xl whitespace-nowrap">
+                  {skillCategory.title}
+                </div>
               </div>
-              <div className="w-9/12 bg-slate-500">
-                <div className="flex">
-                  {skillCategory.skills.map((skill, skillIndex) => {
-                    return <div key={skillIndex}>{skill}</div>;
-                  })}
+              <div className="md:w-9/12">
+                <div className="flex flex-wrap">
+                  {skillCategory.skills.map((skill, skillIndex) => (
+                    <div key={skillIndex} className="mr-4 mb-2">
+                      {skill}
+                    </div>
+                  ))}
                 </div>
               </div>
             </div>
-          );
-        })}
+          </div>
+        ))}
       </div>
     </div>
   );
