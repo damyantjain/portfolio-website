@@ -1,4 +1,4 @@
-import skillList from "../db/skills";
+import skills from "../db/skills";
 
 const Skills = () => {
 
@@ -8,7 +8,7 @@ const Skills = () => {
         Skills & Technologies
       </div>
       <div className="mt-4 md:mt-20">
-        {skillList.map((skillCategory, index) => (
+        {skills.map((skillCategory, index) => (
           <div key={index} className="mb-10">
             <div className="flex flex-col md:flex-row gap-4">
               <div className="md:w-4/12 lg:w-3/12">

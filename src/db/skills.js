@@ -1,4 +1,4 @@
-export default skillList = [
+export default skills = [
     {
       title: "Languages",
       skills: ["JavaScript", "C#", "Java", "Python"],
