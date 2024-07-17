@@ -51,10 +51,10 @@ const Skills = () => {
 
   return (
     <div className="mt-10 md:mt-32">
-      <div className="align-middle text-center font-poppins text-4xl mb-10 font-bold text-[#333333]">
+      <div className="align-middle text-center font-poppins text-4xl font-bold text-[#333333]">
         Skills & Technologies
       </div>
-      <div>
+      <div className="mt-4 lg:mt-20">
         {skillList.map((skillCategory, index) => (
           <div key={index} className="mb-10">
             <div className="flex flex-col md:flex-row gap-4">
