@@ -66,7 +66,7 @@ const Skills = () => {
               <div className="md:w-8/12 lg:w-9/12">
                 <div className="flex flex-wrap">
                   {skillCategory.skills.map((skill, skillIndex) => (
-                    <div key={skillIndex} className="mr-4 mb-2">
+                    <div key={skillIndex} className="mr-4">
                       {skill}
                     </div>
                   ))}
