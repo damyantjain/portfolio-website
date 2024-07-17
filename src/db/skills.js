@@ -4,7 +4,7 @@ const skillList = [
     {
       title: "Languages",
       skills: [
-        { name: "JavaScript", imageUrlName: "js" },
+        { name: "JavaScript", imageUrlName: "javascript" },
         { name: "C#", imageUrlName: "csharp" },
         { name: "Java", imageUrlName: "java" },
         { name: "Python", imageUrlName: "python" },
@@ -20,8 +20,8 @@ const skillList = [
         { name: "Bootstrap", imageUrlName: "bootstrap" },
         { name: "Redux", imageUrlName: "redux" },
         { name: "Tailwind", imageUrlName: "tailwind" },
-        { name: "JavaScript", imageUrlName: "js" },
-        { name: "TypeScript", imageUrlName: "ts" },
+        { name: "JavaScript", imageUrlName: "javascript" },
+        { name: "TypeScript", imageUrlName: "typescript" },
       ],
     },
     {
@@ -29,6 +29,7 @@ const skillList = [
       skills: [
         { name: "AWS", imageUrlName: "aws" },
         { name: "Azure", imageUrlName: "azure" },
+        { name: "Azure DevOps", imageUrlName: "azuredevops" },
         { name: "MySQL", imageUrlName: "mysql" },
         { name: "MongoDB", imageUrlName: "mongodb" },
         { name: "SQLite", imageUrlName: "sqlite" },
