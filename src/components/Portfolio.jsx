@@ -8,9 +8,15 @@ const Portfolio = () => {
 
   return (
     <div className="mx-5 md:mx-24 mb-5 md:mb-10 lg:mx-44">
-      <Intro />
-      <Projects />
-      <Skills />
+      <div id="home" className="md:pt-24">
+        <Intro />
+      </div>
+      <div id="projects" className="md:pt-24">
+        <Projects />
+      </div>
+      <div id="skills" className="md:pt-24">
+        <Skills />
+      </div>
     </div>
   );
 };
