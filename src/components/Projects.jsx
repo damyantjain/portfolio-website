@@ -1,6 +1,7 @@
 import { useInView } from "react-intersection-observer";
 import { motion } from "framer-motion";
 import projects from "../db/projects";
+import test from "../assets/test.png";
 
 const Projects = () => {
   const { ref, inView } = useInView({
@@ -37,7 +38,7 @@ const Projects = () => {
     >
       <div>My Projects</div>
       <motion.div
-        className="grid grid-cols-2 gap-2 lg:gap-8 mt-4 md:mt-20"
+        className="lg:grid lg:grid-cols-2 lg:gap-8 mt-4 md:mt-20"
         initial="hidden"
         animate={inView ? "visible" : "hidden"}
         variants={containerVariants}
@@ -45,11 +46,11 @@ const Projects = () => {
         {projects.map((project, index) => (
           <div
             key={index}
-            className="hover:cursor-pointer hover:scale-95 transition-transform duration-500 ease-in-out transform"
+            className="hover:cursor-pointer hover:scale-95 transition-transform duration-500 ease-in-out transform mt-5 lg:mt-0"
             onClick={() => handleProjectClick(project.link)}
           >
             <motion.div variants={itemVariants}>
-              <div className="bg-gray-100 shadow-2xl object-cover w-full rounded-xl border border-gray-200 h-56 lg:h-96">
+            <div className="bg-gray-100 shadow-2xl object-cover w-full rounded-xl border border-gray-200 h-56 lg:h-96">
                 <img src={project.image} alt={project.name} />
               </div>
             </motion.div>
