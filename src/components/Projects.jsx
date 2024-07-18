@@ -50,7 +50,7 @@ const imageMap = {
   return (
     <div
       ref={ref}
-      className="align-middle font-poppins text-4xl text-[#333333]"
+      className="align-middle font-poppins text-4xl text-[#333333] dark:text-[#e0e0e0]"
     >
       <div className="text-center">My Projects</div>
       <motion.div
@@ -72,7 +72,7 @@ const imageMap = {
                 </div>
                 <div className="px-3 md:px-5 justify-start text- items-start">
                   <div className="font-bold font-poppins text-xl mt-4">{project.title}</div>
-                  <div className="text-sm font-poppins text-gray-500">{project.description}</div>
+                  <div className="text-sm font-poppins dark:text-gray-400 text-gray-500">{project.description}</div>
                 </div>
               </div>
             </motion.div>

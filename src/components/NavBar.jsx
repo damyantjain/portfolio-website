@@ -1,5 +1,9 @@
 import { Link } from "react-scroll";
-import dj from "./../assets/dj_circle.png";
+import dj from "./../assets/4.png";
+import { useContext } from "react";
+import { useState } from "react";
+import djdark from "./../assets/5.png";
+import ThemeContext from "../context/ThemeContext";
 
 const NavBar = () => {
   const calculateDuration = (target) => {
@@ -16,17 +20,22 @@ const NavBar = () => {
     return duration;
   };
 
-  const toggleDarkMode = () => {};
+  const { darkMode, setDarkMode } = useContext(ThemeContext);
+  console.log(darkMode);
+
+  const toggleDarkMode = () => {
+    setDarkMode(!darkMode);
+  };
 
   return (
-    <nav className="hidden items-center fixed top-0 left-0 w-full bg-white shadow-lg z-50 md:flex px-16">
+    <nav className="hidden items-center fixed top-0 left-0 w-full dark:bg-[#121212] bg-white shadow-lg dark:shadow-[#e53939] z-50 md:flex px-16 dark:text-[#e0e0e0]">
       <div className="w-full grid grid-cols-3 items-center">
         <div>
-          <img src={dj} className="h-20 w-20" />
+          { darkMode? <img src={djdark} className="h-20 w-20 bg-black" /> : <img src={dj} className="h-20 w-20" /> }
         </div>
 
-        <div className=" md:flex justify-center">
-          <ul className=" flex font-poppins text-[#333333] items-center space-x-10 h-20">
+        <div className=" md:flex justify-center dark:text-[#e0e0e0]">
+          <ul className=" flex font-poppins text-[#333333] items-center space-x-10 dark:text-[#e0e0e0] h-20">
             <li className="transition-colors hover:text-[#9d9d9d]">
               <Link
                 to="home"
@@ -48,7 +57,7 @@ const NavBar = () => {
             <li className="transition-colors hover:text-[#9d9d9d]">
               <Link
                 to="resume"
-                smooth="easeInOutQuad"
+                smooth="easeInOutQuad"  
                 duration={() => calculateDuration("#resume")}
               >
                 Resume
@@ -66,10 +75,16 @@ const NavBar = () => {
           </ul>
         </div>
         <div
-          className="flex justify-end relative text-xl hover:cursor-pointer"
+          className={`flex justify-end relative`}
           onClick={toggleDarkMode}
         >
-          ☀
+          <div
+            className={`hover:cursor-pointer ${
+              darkMode ? `text-[#f0f0f0]` : `text-[#333333]`
+            } text-xl`}
+          >
+            ☀
+          </div>
         </div>
       </div>
     </nav>

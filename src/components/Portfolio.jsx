@@ -8,7 +8,7 @@ const Portfolio = () => {
   const adjective = adjectives[Math.floor(Math.random() * adjectives.length)];
 
   return (
-    <div className="mx-5 md:mx-24 mb-5 md:mb-10 lg:mx-44">
+    <div className="mx-5 md:mx-24 mb-5 md:mb-10 lg:mx-44 dark:bg-[#121212]">
       <div id="home" className="md:pt-24">
         <Intro />
       </div>
