@@ -25,16 +25,23 @@ const Experience = () => {
 
   return (
     <div className="mt-10">
-      <div className="font-poppins mb-10 text-2xl font-bold text-[#333333]">
+      <div className="font-poppins mb-10 text-2xl text-[#333333]">
         Experience
       </div>
       <div>
         {experience.map((exp, index) => (
-          <div className="bg-gradient-to-br  key={index} from-gray-100 to-white shadow-lg rounded-xl p-6 border border-gray-200 mb-6">
-            <div className="font-bold">{exp.company}</div>
-            <div className="text-sm text-gray-500">{exp.position}</div>
-            <div className="text-sm text-gray-500">{exp.location}</div>
-            <div className="text-sm text-gray-500">{exp.duration}</div>
+          <div className="bg-gradient-to-br font-poppins key={index} from-gray-100 to-white shadow-lg rounded-xl p-6 border border-gray-200 mb-6">
+            <div className="md:flex md:flex-row">
+              <div className="md:w-9/12">
+                <div className="font-bold md:text-lg">{exp.company}</div>
+                <div className="text-sm text-gray-500">{exp.position}</div>
+                <div className="text-sm text-gray-500">{exp.location}</div>
+              </div>
+              <div className="md:w-3/12 text-sm md:text-end text-gray-500">
+                {exp.duration}
+              </div>
+            </div>
+
             <div className="mt-2">{exp.description}</div>
           </div>
         ))}

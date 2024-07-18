@@ -23,7 +23,7 @@ const Projects = () => {
 
   const itemVariants = {
     hidden: { opacity: 0, y: 20 },
-    visible: { opacity: 1, y: 0, transition: { duration: 2, ease: "easeOut" } },
+    visible: { opacity: 1, y: 0, transition: { duration: 1.5, ease: "easeOut" } },
   };
 
   const handleProjectClick = (link) => {
@@ -33,7 +33,7 @@ const Projects = () => {
   return (
     <div
       ref={ref}
-      className="align-middle text-center font-poppins text-4xl font-bold text-[#333333]"
+      className="align-middle text-center font-poppins text-4xl text-[#333333]"
     >
       <div>My Projects</div>
       <motion.div
@@ -49,7 +49,7 @@ const Projects = () => {
             onClick={() => handleProjectClick(project.link)}
           >
             <motion.div variants={itemVariants}>
-              <div className="rounded-xl shadow-2xl object-cover bg-gray-200 h-56 w-full lg:h-96">
+              <div className="bg-gray-100 shadow-2xl object-cover w-full rounded-xl border border-gray-200 h-56 lg:h-96">
                 <img src={project.image} alt={project.name} />
               </div>
             </motion.div>

@@ -34,9 +34,9 @@ const Skills = () => {
 
   return (
     <div className="mt-20 md:mt-32">
-      <div className="align-middle text-center font-poppins text-4xl font-bold text-[#333333]">
+      {/* <div className="align-middle text-center font-poppins text-4xl text-[#333333]">
         Skills & Technologies
-      </div>
+      </div> */}
 
       <motion.div
         ref={ref}
@@ -49,7 +49,7 @@ const Skills = () => {
             <div key={index} className="mb-10">
               <div className="flex flex-col md:flex-row gap-4">
                 <div className="md:w-4/12 lg:w-3/12 flex items-center">
-                  <div className="font-poppins font-bold  text-[#333333] text-xl whitespace-nowrap">
+                  <div className="font-poppins text-[#333333] text-xl whitespace-nowrap">
                     {skillCategory.title}
                   </div>
                 </div>
