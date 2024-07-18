@@ -3,10 +3,17 @@ import dj from "./../assets/dj.png";
 
 const NavBar = () => {
   const calculateDuration = (target) => {
-    const distance = Math.abs(
-      window.pageYOffset - document.querySelector(target).offsetTop
-    );
-    return distance < 300 ? 300 : distance / 2;
+    const targetPosition = document.querySelector(target).offsetTop;
+    const startPosition = window.scrollY;
+    const distance = Math.abs(startPosition - targetPosition);
+    const baseDuration = 400;
+    const additionalDuration = Math.log(distance + 1) * 100;
+    let duration = baseDuration + additionalDuration;
+    const minDuration = 400;
+    const maxDuration = 2000;
+    duration = Math.min(Math.max(duration, minDuration), maxDuration);
+  
+    return duration;
   };
 
   return (
@@ -34,20 +41,21 @@ const NavBar = () => {
           </li>
           <li className="transition-colors hover:text-[#9d9d9d]">
             <Link
-              to="skills"
-              smooth="easeInOutQuad"
-              duration={() => calculateDuration("#skills")}
-            >
-              Skills
-            </Link>
-          </li>
-          <li className="transition-colors hover:text-[#9d9d9d]">
-            <Link
               to="resume"
               smooth="easeInOutQuad"
               duration={() => calculateDuration("#resume")}
             >
               Resume
+            </Link>
+          </li>
+
+          <li className="transition-colors hover:text-[#9d9d9d]">
+            <Link
+              to="skills"
+              smooth="easeInOutQuad"
+              duration={() => calculateDuration("#skills")}
+            >
+              Skills
             </Link>
           </li>
         </ul>

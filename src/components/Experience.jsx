@@ -30,7 +30,7 @@ const Experience = () => {
       </div>
       <div>
         {experience.map((exp, index) => (
-          <div className="bg-gradient-to-br font-poppins key={index} from-gray-100 to-white shadow-lg rounded-xl p-6 border border-gray-200 mb-6">
+          <div key={index} className="bg-gradient-to-br font-poppins key={index} from-gray-100 to-white shadow-lg rounded-xl p-6 border border-gray-200 mb-6">
             <div className="md:flex md:flex-row">
               <div className="md:w-9/12">
                 <div className="font-bold md:text-lg">{exp.company}</div>
