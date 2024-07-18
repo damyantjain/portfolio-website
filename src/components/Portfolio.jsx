@@ -1,6 +1,7 @@
 import Intro from "./Intro";
 import Projects from "./Projects";
 import Skills from "./Skills";
+import Resume from "./Resume";
 
 const Portfolio = () => {
   const adjectives = ["Developer", "Designer", "Creator", "Innovator"];
@@ -16,6 +17,9 @@ const Portfolio = () => {
       </div>
       <div id="skills" className="md:pt-24">
         <Skills />
+      </div>
+      <div id="resume" className="md:pt-24">
+        <Resume />
       </div>
     </div>
   );

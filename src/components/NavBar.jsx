@@ -38,6 +38,15 @@ const NavBar = () => {
             Skills
           </Link>
         </li>
+        <li className="transition-colors hover:text-[#9d9d9d]">
+            <Link
+              to="resume"
+              smooth="easeInOutQuad"
+              duration={() => calculateDuration("#resume")}
+            >
+              Resume
+            </Link>
+          </li>
       </ul>
     </nav>
   );
