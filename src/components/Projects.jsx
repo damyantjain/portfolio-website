@@ -26,9 +26,9 @@ const Projects = () => {
   return (
     <div
       ref={ref}
-      className="align-middle font-poppins text-4xl text-[#333333] dark:text-[#e0e0e0]"
+      className="align-middle text-4xl text-[#333333] dark:text-[#e0e0e0]"
     >
-      <div className="text-center">My Projects</div>
+      <div className="text-center font-poppins">My Projects</div>
       <motion.div
         className="lg:grid lg:grid-cols-2 lg:gap-8 mt-4 md:mt-20"
         initial="hidden"

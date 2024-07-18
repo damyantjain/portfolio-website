@@ -49,7 +49,7 @@ const ProjectCard = ({ project }) => {
                 )}
               </div>
               <div className="px-3 md:px-5 justify-start text- items-start">
-                <div className="font-bold font-poppins text-xl mt-4">
+                <div className="font-bold text-xl mt-4">
                   {project.title}
                 </div>
                 <div className="text-sm font-poppins dark:text-gray-400 text-gray-500">
