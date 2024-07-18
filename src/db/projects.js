@@ -5,7 +5,7 @@ const projects = [
     description:
       "A robust Learning Management System (LMS) inspired by Canvas, designed to streamline the management of courses, assignments, grades, and modules in an educational setting. ",
 
-    image: "Image URL of Project 1",
+    image: "kanbas",
 
     link: "https://github.com/damyantjain/kanbas-react-web-app",
   },
@@ -16,7 +16,7 @@ const projects = [
     description:
       "A powerful WPF-based client for managing customer data, leveraging gRPC services for high performance and scalability. Ideal for businesses needing reliable customer management solutions.",
 
-    image: "Image URL of Project 2",
+    image: "customerManagement",
 
     link: "https://github.com/damyantjain/WPF-Customer-App",
   },
@@ -27,7 +27,7 @@ const projects = [
     description:
       "A comprehensive food delivery application built with React.js, Redux, and TailwindCSS . Integrates live APIs from Swiggy offering real-time ordering experience.",
 
-    image: "Image URL of Project 3",
+    image: "jiffy",
 
     link: "https://github.com/damyantjain/jiffy",
   },
@@ -38,7 +38,7 @@ const projects = [
     description:
       "A unified admission portal for rapid admission process for both students and universities. Powered by Spring Boot and deployed on Azure Web Apps",
 
-    image: "Image URL of Project 4",
+    image: "admitly",
 
     link: "https://github.com/gauravtejwani24/UniversityApplicationPortal",
   },
