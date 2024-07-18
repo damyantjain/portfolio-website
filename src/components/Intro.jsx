@@ -23,8 +23,7 @@ const Intro = () => {
           </div>
           <div className="align-middle text-center font-poppins  text-[#333333]">
             I'm all about turning cool ideas into awesome products and exploring
-            the ever-evolving tech world. With over 3 years of experience under
-            my belt, I'm passionate about solving real-world problems. When I'm
+            the ever-evolving tech world. With over 3 years of experience, I'm passionate about solving real-world problems. When I'm
             not coding, you can find me enjoying sports.
           </div>
         </div>
