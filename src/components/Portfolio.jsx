@@ -15,11 +15,11 @@ const Portfolio = () => {
       <div id="projects" className="md:pt-24">
         <Projects />
       </div>
-      <div id="skills" className="md:pt-24">
-        <Skills />
-      </div>
       <div id="resume" className="md:pt-24">
         <Resume />
+      </div>
+      <div id="skills" className="md:pt-20">
+        <Skills />
       </div>
     </div>
   );

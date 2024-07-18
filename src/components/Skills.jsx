@@ -33,7 +33,7 @@ const Skills = () => {
   };
 
   return (
-    <div className="mt-20 md:mt-32">
+    <div>
       {/* <div className="align-middle text-center font-poppins text-4xl text-[#333333]">
         Skills & Technologies
       </div> */}
@@ -44,9 +44,9 @@ const Skills = () => {
         animate={inView ? "visible" : "hidden"}
         variants={containerVariants}
       >
-        <div className="mt-4 md:mt-20">
+        <div className="mt-20 md:mt-20">
           {skillList.map((skillCategory, index) => (
-            <div key={index} className="mb-10">
+            <div key={index} className="mb-5 md:mb-10">
               <div className="flex flex-col md:flex-row gap-4">
                 <div className="md:w-4/12 lg:w-3/12 flex items-center">
                   <div className="font-poppins text-[#333333] text-xl whitespace-nowrap">
