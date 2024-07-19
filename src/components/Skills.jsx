@@ -33,44 +33,42 @@ const Skills = () => {
   };
 
   return (
-    <div>
-      {/* <div className="align-middle text-center font-poppins text-4xl text-[#333333]">
+    <div className="py-12">
+      <div className="align-middle text-center font-poppins text-4xl text-[#333333] dark:text-[#e0e0e0]">
         Skills & Technologies
-      </div> */}
-
+      </div>
       <motion.div
         ref={ref}
         initial="hidden"
         animate={inView ? "visible" : "hidden"}
         variants={containerVariants}
+        className="mt-10 container mx-auto px-4 bg-gradient-to-br from-gray-100 to-white w-full dark:from-[#1e1e1e] dark:to-[#2222222d] shadow-lg rounded-xl p-6 pt-16 border border-gray-200 dark:border-0 mb-6"
       >
-        <div className="mt-20 md:mt-20">
-          {skillList.map((skillCategory, index) => (
-            <div key={index} className="mb-5 md:mb-10">
-              <div className="flex flex-col md:flex-row gap-4">
-                <div className="md:w-4/12 lg:w-3/12 flex items-center">
-                  <div className="font-poppins dark:text-[#e0e0e0] text-[#333333] text-xl whitespace-nowrap">
-                    {skillCategory.title}
-                  </div>
-                </div>
-                <div className="md:w-8/12 lg:w-9/12 flex flex-wrap">
-                  {skillCategory.skills.map((skill, skillIndex) => (
-                    <motion.div
-                      key={skillIndex}
-                      className="mr-4 flex items-center"
-                      variants={itemVariants}
-                    >
-                      <TechIcons
-                        imageUrlName={skill.imageUrlName}
-                        name={skill.name}
-                      />
-                    </motion.div>
-                  ))}
+        {skillList.map((skillCategory, index) => (
+          <div key={index} className="mb-10">
+            <div className="flex flex-col md:flex-row gap-4">
+              <div className="md:w-4/12 lg:w-3/12 flex items-center">
+                <div className="font-poppins dark:text-[#e0e0e0] text-[#333333] text-xl whitespace-nowrap">
+                  {skillCategory.title}
                 </div>
               </div>
+              <div className="md:w-8/12 lg:w-9/12 flex flex-wrap gap-4">
+                {skillCategory.skills.map((skill, skillIndex) => (
+                  <motion.div
+                    key={skillIndex}
+                    className="flex items-center"
+                    variants={itemVariants}
+                  >
+                    <TechIcons
+                      imageUrlName={skill.imageUrlName}
+                      name={skill.name}
+                    />
+                  </motion.div>
+                ))}
+              </div>
             </div>
-          ))}
-        </div>
+          </div>
+        ))}
       </motion.div>
     </div>
   );
