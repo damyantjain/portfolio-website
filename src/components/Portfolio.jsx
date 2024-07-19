@@ -2,10 +2,9 @@ import Intro from "./Intro";
 import Projects from "./Projects";
 import Skills from "./Skills";
 import Resume from "./Resume";
+import Contact from "./Contact";
 
 const Portfolio = () => {
-  const adjectives = ["Developer", "Designer", "Creator", "Innovator"];
-  const adjective = adjectives[Math.floor(Math.random() * adjectives.length)];
 
   return (
     <div className="mx-5 md:mx-24 mb-5 md:mb-10 lg:mx-44 dark:bg-[#121212]">
@@ -20,6 +19,9 @@ const Portfolio = () => {
       </div>
       <div id="skills" className="md:pt-20">
         <Skills />
+      </div>
+      <div id="contact" className="md:pt-20">
+        <Contact />
       </div>
     </div>
   );

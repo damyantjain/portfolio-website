@@ -15,6 +15,10 @@ const nav = [
     title: "Skills",
     link: "skills",
   },
+  {
+    title: "Contact",
+    link: "contact",  
+  }
 ];
 
 export default nav;
