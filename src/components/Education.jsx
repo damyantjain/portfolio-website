@@ -35,7 +35,7 @@ const Education = () => {
                 <div className="text-sm dark:text-gray-400 text-gray-500">{edu.degree}</div>
                 <div className="text-sm dark:text-gray-400 text-gray-500">{edu.location}</div>
               </div>
-              <div className="xl:w-4/12 text-sm text-gray-500 xl:text-end">
+              <div className="xl:w-4/12 text-sm text-gray-500 dark:text-gray-400 xl:text-end">
                 {edu.duration}
               </div>
             </div>
