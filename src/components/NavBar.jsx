@@ -41,7 +41,7 @@ const NavBar = () => {
           <div className=" md:flex justify-center dark:text-[#e0e0e0]">
             <ul className=" flex font-poppins text-[#333333] items-center space-x-10 dark:text-[#e0e0e0] h-20">
               {nav.map((item, index) => (
-                <li key={index} className="transition-colors hover:text-[#9d9d9d]">
+                <li key={index} className="transition-colors hover:text-[#9d9d9d] hover:cursor-pointer">
                   <Link
                     to={item.link}
                     smooth="easeInOutQuad"
