@@ -1,28 +1,6 @@
-const Experience = () => {
-  const experience = [
-    {
-      company: "West Pharmaceuticals Service",
-      position: "Software Engineer",
-      location: "Bangalore, India",
-      duration: "July 2020 - July 2023",
-      description: "Description to come here",
-    },
-    {
-      company: "West Pharmaceutical Services",
-      position: "Trainee Software Engineer",
-      location: "Bangalore, India",
-      duration: "Jan 2020 - July 2020",
-      description: "Description to come here",
-    },
-    {
-      company: "Chatbotsa",
-      position: "Software Developer Intern",
-      location: "Cairo, Egypt",
-      duration: "June 1 - July 15",
-      description: "Description to come here",
-    },
-  ];
+import experience from "../db/experience";
 
+const Experience = () => {
   return (
     <div className="mt-10">
       <div className="font-poppins mb-10 text-2xl text-[#333333] dark:text-[#e0e0e0]">
