@@ -1,24 +1,16 @@
 import { Link } from "react-scroll";
-import dj from "./../assets/4.png";
+import dj from "./../assets/dj.png";
 import { useContext } from "react";
-import { useState } from "react";
-import djdark from "./../assets/5.png";
+import { useState, useEffect } from "react";
+import djdark from "./../assets/dj_dark.png";
 import ThemeContext from "../context/ThemeContext";
+import NavBarMobile from "./NavBarMobile";
+import useCalculateDuration from "../util/useCalculateDuration";
+import nav from "../db/nav";
 
 const NavBar = () => {
-  const calculateDuration = (target) => {
-    const targetPosition = document.querySelector(target).offsetTop;
-    const startPosition = window.scrollY;
-    const distance = Math.abs(startPosition - targetPosition);
-    const baseDuration = 400;
-    const additionalDuration = Math.log(distance + 1) * 100;
-    let duration = baseDuration + additionalDuration;
-    const minDuration = 400;
-    const maxDuration = 2000;
-    duration = Math.min(Math.max(duration, minDuration), maxDuration);
 
-    return duration;
-  };
+  const [isOpen, setIsOpen] = useState(false);
 
   const { darkMode, setDarkMode } = useContext(ThemeContext);
   console.log(darkMode);
@@ -26,6 +18,14 @@ const NavBar = () => {
   const toggleDarkMode = () => {
     setDarkMode(!darkMode);
   };
+
+  useEffect(() => {
+    if (isOpen) {
+      document.body.style.overflow = 'hidden';
+    } else {
+      document.body.style.overflow = 'auto';
+    }
+  }, [isOpen]);
 
   return (
     <div>
@@ -41,42 +41,17 @@ const NavBar = () => {
 
           <div className=" md:flex justify-center dark:text-[#e0e0e0]">
             <ul className=" flex font-poppins text-[#333333] items-center space-x-10 dark:text-[#e0e0e0] h-20">
-              <li className="transition-colors hover:text-[#9d9d9d]">
-                <Link
-                  to="home"
-                  smooth="easeInOutQuad"
-                  duration={() => calculateDuration("#home")}
-                >
-                  Home
-                </Link>
-              </li>
-              <li className="transition-colors hover:text-[#9d9d9d]">
-                <Link
-                  to="projects"
-                  smooth="easeInOutQuad"
-                  duration={() => calculateDuration("#projects")}
-                >
-                  Projects
-                </Link>
-              </li>
-              <li className="transition-colors hover:text-[#9d9d9d]">
-                <Link
-                  to="resume"
-                  smooth="easeInOutQuad"
-                  duration={() => calculateDuration("#resume")}
-                >
-                  Resume
-                </Link>
-              </li>
-              <li className="transition-colors hover:text-[#9d9d9d]">
-                <Link
-                  to="skills"
-                  smooth="easeInOutQuad"
-                  duration={() => calculateDuration("#skills")}
-                >
-                  Skills
-                </Link>
-              </li>
+              {nav.map((item) => (
+                <li className="transition-colors hover:text-[#9d9d9d]">
+                  <Link
+                    to={item.link}
+                    smooth="easeInOutQuad"
+                    duration={() => useCalculateDuration(`#${item.link}`)}
+                  >
+                    {item.title}
+                  </Link>
+                </li>
+              ))}
             </ul>
           </div>
           <div className={`flex justify-end relative`} onClick={toggleDarkMode}>
@@ -90,22 +65,28 @@ const NavBar = () => {
           </div>
         </div>
       </nav>
-      <div className="md:hidden pt-2  px-5">
-        <div className="flex items-center justify-between">
-          <div>
-            {darkMode ? (
-              <img src={djdark} className="h-20 w-20 bg-black" />
-            ) : (
-              <img src={dj} className="h-16 w-16" />
-            )}
-          </div>
-          <div>
-            <i class="fa-solid fa-bars fa-2x"></i>
+      {!isOpen && (
+        <div className="md:hidden pt-2  px-5">
+          <div className="flex items-center justify-between">
+            <div>
+              {darkMode ? (
+                <img src={djdark} className="h-16 w-16 bg-black" />
+              ) : (
+                <img src={dj} className="h-16 w-16" />
+              )}
+            </div>
+            <div>
+              <i style={{ color: darkMode ? "#f0f0f0" : "#333333" }}
+                onClick={() => setIsOpen(true)}
+                class="fa-solid fa-bars fa-2x"
+              ></i>
+            </div>
           </div>
         </div>
-      </div>
+      )}
+      <NavBarMobile isOpen={isOpen} setIsOpen={setIsOpen} />
     </div>
   );
-};
+};  
 
 export default NavBar;
