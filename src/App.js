@@ -1,7 +1,7 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
 import Portfolio from "./components/Portfolio";
-import NavBar from "./components/NavBar";
+import Blog from "./components/Blog";
 import ThemeContext from "./context/ThemeContext";
 import { useState, useEffect } from "react";
 import { createBrowserRouter, Outlet, RouterProvider, Navigate } from "react-router-dom";
@@ -38,6 +38,10 @@ const appRouter = createBrowserRouter([
       {
         path: "*",
         element: <Navigate to="/" />
+      },
+      {
+        path: "/blog",
+        element: <Blog />,
       }
     ],
   },

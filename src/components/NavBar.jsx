@@ -1,4 +1,5 @@
-import { Link } from "react-scroll";
+import { Link as ScrollLink } from "react-scroll";
+import { Link } from "react-router-dom";
 import dj from "./../assets/dj.png";
 import { useContext } from "react";
 import { useState, useEffect } from "react";
@@ -6,11 +7,11 @@ import djdark from "./../assets/dj_dark.png";
 import ThemeContext from "../context/ThemeContext";
 import NavBarMobile from "./NavBarMobile";
 import useCalculateDuration from "../util/useCalculateDuration";
-import nav from "../db/nav";
+import { useNavigate } from "react-router-dom";
 
-const NavBar = () => {
-
+const NavBar = ({ nav }) => {
   const [isOpen, setIsOpen] = useState(false);
+  const navigate = useNavigate();
 
   const { darkMode, setDarkMode } = useContext(ThemeContext);
 
@@ -20,11 +21,15 @@ const NavBar = () => {
 
   useEffect(() => {
     if (isOpen) {
-      document.body.style.overflow = 'hidden';
+      document.body.style.overflow = "hidden";
     } else {
-      document.body.style.overflow = 'auto';
+      document.body.style.overflow = "auto";
     }
   }, [isOpen]);
+
+  const handleLogoClick = () => {
+    navigate("/");
+  };
 
   return (
     <div>
@@ -32,23 +37,44 @@ const NavBar = () => {
         <div className="w-full grid grid-cols-3 items-center">
           <div>
             {darkMode ? (
-              <img src={djdark} className="h-20 w-20 bg-black" />
+              <img
+                onClick={() => {
+                  navigate("/");
+                }}
+                src={djdark}
+                className="h-20 w-20 bg-black hover:cursor-pointer"
+              />
             ) : (
-              <img src={dj} className="h-20 w-20" />
+              <img
+                onClick={() => {
+                  navigate("/");
+                }}
+                src={dj}
+                className="h-20 w-20 hover:cursor-pointer"
+              />
             )}
           </div>
 
           <div className=" md:flex justify-center dark:text-[#e0e0e0]">
             <ul className=" flex font-poppins text-[#333333] items-center space-x-10 dark:text-[#e0e0e0] h-20">
               {nav.map((item, index) => (
-                <li key={index} className="transition-colors hover:text-[#9d9d9d] hover:cursor-pointer">
-                  <Link
-                    to={item.link}
-                    smooth="easeInOutQuad"
-                    duration={() => useCalculateDuration(`#${item.link}`)}
-                  >
-                    {item.title}
-                  </Link>
+                <li
+                  key={index}
+                  className="transition-colors hover:text-[#9d9d9d] hover:cursor-pointer"
+                >
+                  {item.external ? (
+                    <div>
+                      <Link to="/blog">{item.title}</Link>
+                    </div>
+                  ) : (
+                    <ScrollLink
+                      to={item.link}
+                      smooth="easeInOutQuad"
+                      duration={() => useCalculateDuration(`#${item.link}`)}
+                    >
+                      {item.title}
+                    </ScrollLink>
+                  )}
                 </li>
               ))}
             </ul>
@@ -75,7 +101,8 @@ const NavBar = () => {
               )}
             </div>
             <div>
-              <i style={{ color: darkMode ? "#f0f0f0" : "#333333" }}
+              <i
+                style={{ color: darkMode ? "#f0f0f0" : "#333333" }}
                 onClick={() => setIsOpen(true)}
                 className="fa-solid fa-bars fa-2x"
               ></i>
@@ -83,9 +110,9 @@ const NavBar = () => {
           </div>
         </div>
       )}
-      <NavBarMobile isOpen={isOpen} setIsOpen={setIsOpen} />
+      <NavBarMobile nav={nav} isOpen={isOpen} setIsOpen={setIsOpen} />
     </div>
   );
-};  
+};
 
 export default NavBar;

@@ -1,10 +1,9 @@
-import nav from "../db/nav";
 import { Link } from "react-scroll";
 import useCalculateDuration from "../util/useCalculateDuration";
 import { useContext } from "react";
 import ThemeContext from "../context/ThemeContext";
 
-const NavBarMobile = ({ isOpen, setIsOpen }) => {
+const NavBarMobile = ({ nav, isOpen, setIsOpen }) => {
   const { darkMode, setDarkMode } = useContext(ThemeContext);
   const toggleMenu = () => {
     setIsOpen(!isOpen);
