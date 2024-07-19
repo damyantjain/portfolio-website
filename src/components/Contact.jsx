@@ -5,7 +5,7 @@ const Contact = () => {
   const { darkMode } = useContext(ThemeContext);
 
   return (
-    <div className="flex justify-end items-center gap-10 px-4">
+    <div className="flex flex-wrap justify-end items-center gap-10 px-4 ">
       <div className="text-right text-[#333333] dark:text-[#e0e0e0]">
         <div className="font-poppins text-lg">E-mail</div>
         <div className="text-sm">jain.dam@northeastern.edu</div>
@@ -14,6 +14,7 @@ const Contact = () => {
         <div className="font-poppins text-lg">City</div>
         <div className="text-sm">Boston, MA</div>
       </div>
+      <div className="flex gap-10">
       <div>
         <a href="https://github.com/damyantjain" target="_blank">
           <i
@@ -29,6 +30,7 @@ const Contact = () => {
             style={{ color: darkMode ? "white" : "#0077B5" }}
           ></i>
         </a>
+      </div>
       </div>
     </div>
   );
