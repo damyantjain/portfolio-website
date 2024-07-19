@@ -28,66 +28,83 @@ const NavBar = () => {
   };
 
   return (
-    <nav className="hidden items-center fixed top-0 left-0 w-full dark:bg-[#121212] bg-white shadow-lg dark:shadow-[#e53939] z-50 md:flex px-16 dark:text-[#e0e0e0]">
-      <div className="w-full grid grid-cols-3 items-center">
-        <div>
-          { darkMode? <img src={djdark} className="h-20 w-20 bg-black" /> : <img src={dj} className="h-20 w-20" /> }
-        </div>
+    <div>
+      <nav className="hidden items-center fixed top-0 left-0 w-full dark:bg-[#121212] bg-white shadow-lg dark:shadow-[#e53939] z-50 md:flex px-16 dark:text-[#e0e0e0]">
+        <div className="w-full grid grid-cols-3 items-center">
+          <div>
+            {darkMode ? (
+              <img src={djdark} className="h-20 w-20 bg-black" />
+            ) : (
+              <img src={dj} className="h-20 w-20" />
+            )}
+          </div>
 
-        <div className=" md:flex justify-center dark:text-[#e0e0e0]">
-          <ul className=" flex font-poppins text-[#333333] items-center space-x-10 dark:text-[#e0e0e0] h-20">
-            <li className="transition-colors hover:text-[#9d9d9d]">
-              <Link
-                to="home"
-                smooth="easeInOutQuad"
-                duration={() => calculateDuration("#home")}
-              >
-                Home
-              </Link>
-            </li>
-            <li className="transition-colors hover:text-[#9d9d9d]">
-              <Link
-                to="projects"
-                smooth="easeInOutQuad"
-                duration={() => calculateDuration("#projects")}
-              >
-                Projects
-              </Link>
-            </li>
-            <li className="transition-colors hover:text-[#9d9d9d]">
-              <Link
-                to="resume"
-                smooth="easeInOutQuad"  
-                duration={() => calculateDuration("#resume")}
-              >
-                Resume
-              </Link>
-            </li>
-            <li className="transition-colors hover:text-[#9d9d9d]">
-              <Link
-                to="skills"
-                smooth="easeInOutQuad"
-                duration={() => calculateDuration("#skills")}
-              >
-                Skills
-              </Link>
-            </li>
-          </ul>
+          <div className=" md:flex justify-center dark:text-[#e0e0e0]">
+            <ul className=" flex font-poppins text-[#333333] items-center space-x-10 dark:text-[#e0e0e0] h-20">
+              <li className="transition-colors hover:text-[#9d9d9d]">
+                <Link
+                  to="home"
+                  smooth="easeInOutQuad"
+                  duration={() => calculateDuration("#home")}
+                >
+                  Home
+                </Link>
+              </li>
+              <li className="transition-colors hover:text-[#9d9d9d]">
+                <Link
+                  to="projects"
+                  smooth="easeInOutQuad"
+                  duration={() => calculateDuration("#projects")}
+                >
+                  Projects
+                </Link>
+              </li>
+              <li className="transition-colors hover:text-[#9d9d9d]">
+                <Link
+                  to="resume"
+                  smooth="easeInOutQuad"
+                  duration={() => calculateDuration("#resume")}
+                >
+                  Resume
+                </Link>
+              </li>
+              <li className="transition-colors hover:text-[#9d9d9d]">
+                <Link
+                  to="skills"
+                  smooth="easeInOutQuad"
+                  duration={() => calculateDuration("#skills")}
+                >
+                  Skills
+                </Link>
+              </li>
+            </ul>
+          </div>
+          <div className={`flex justify-end relative`} onClick={toggleDarkMode}>
+            <div
+              className={`hover:cursor-pointer ${
+                darkMode ? `text-[#f0f0f0]` : `text-[#333333]`
+              } text-xl`}
+            >
+              ☀
+            </div>
+          </div>
         </div>
-        <div
-          className={`flex justify-end relative`}
-          onClick={toggleDarkMode}
-        >
-          <div
-            className={`hover:cursor-pointer ${
-              darkMode ? `text-[#f0f0f0]` : `text-[#333333]`
-            } text-xl`}
-          >
-            ☀
+      </nav>
+      <div className="md:hidden pt-2  px-5">
+        <div className="flex items-center justify-between">
+          <div>
+            {darkMode ? (
+              <img src={djdark} className="h-20 w-20 bg-black" />
+            ) : (
+              <img src={dj} className="h-16 w-16" />
+            )}
+          </div>
+          <div>
+            <i class="fa-solid fa-bars fa-2x"></i>
           </div>
         </div>
       </div>
-    </nav>
+    </div>
   );
 };
 
