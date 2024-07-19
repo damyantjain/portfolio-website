@@ -13,7 +13,6 @@ const NavBar = () => {
   const [isOpen, setIsOpen] = useState(false);
 
   const { darkMode, setDarkMode } = useContext(ThemeContext);
-  console.log(darkMode);
 
   const toggleDarkMode = () => {
     setDarkMode(!darkMode);
@@ -41,8 +40,8 @@ const NavBar = () => {
 
           <div className=" md:flex justify-center dark:text-[#e0e0e0]">
             <ul className=" flex font-poppins text-[#333333] items-center space-x-10 dark:text-[#e0e0e0] h-20">
-              {nav.map((item) => (
-                <li className="transition-colors hover:text-[#9d9d9d]">
+              {nav.map((item, index) => (
+                <li key={index} className="transition-colors hover:text-[#9d9d9d]">
                   <Link
                     to={item.link}
                     smooth="easeInOutQuad"
@@ -78,7 +77,7 @@ const NavBar = () => {
             <div>
               <i style={{ color: darkMode ? "#f0f0f0" : "#333333" }}
                 onClick={() => setIsOpen(true)}
-                class="fa-solid fa-bars fa-2x"
+                className="fa-solid fa-bars fa-2x"
               ></i>
             </div>
           </div>
