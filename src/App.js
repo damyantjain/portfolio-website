@@ -1,7 +1,9 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
 import Portfolio from "./components/Portfolio";
-import BlogHome from "./components/BlogHome";
+import BlogHome from "./components/Blog/BlogHome";
+import BlogView from "./components/Blog/BlogView";
+import BlogLayout from "./components/Blog/BlogLayout";
 import ThemeContext from "./context/ThemeContext";
 import { useState, useEffect } from "react";
 import {
@@ -42,8 +44,18 @@ const appRouter = createBrowserRouter([
         element: <Portfolio />,
       },
       {
-        path: "/blog",
-        element: <BlogHome />,
+        path: "blog",
+        element: <BlogLayout />,
+        children: [
+          {
+            path: "",
+            element: <BlogHome />,
+          },
+          {
+            path: ":id",
+            element: <BlogView />,
+          },
+        ],
       },
       {
         path: "*",
