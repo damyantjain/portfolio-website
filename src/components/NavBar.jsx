@@ -27,14 +27,12 @@ const NavBar = ({ nav }) => {
     }
   }, [isOpen]);
 
-  const handleLogoClick = () => {
-    navigate("/");
-  };
-
   return (
     <div>
       <nav className="hidden items-center fixed top-0 left-0 w-full dark:bg-[#121212] bg-white shadow-lg dark:shadow-[#e53939] z-50 md:flex px-16 dark:text-[#e0e0e0]">
-        <div className="w-full grid grid-cols-3 items-center">
+        <div className="w-full grid  grid-cols-3 items-center" style={{gridTemplateColumns: '1fr auto 1fr'}}>
+
+
           <div>
             {darkMode ? (
               <img
@@ -55,17 +53,15 @@ const NavBar = ({ nav }) => {
             )}
           </div>
 
-          <div className=" md:flex justify-center dark:text-[#e0e0e0]">
-            <ul className=" flex font-poppins text-[#333333] items-center space-x-10 dark:text-[#e0e0e0] h-20">
+          <div className="md:flex justify-center dark:text-[#e0e0e0]">
+            <ul className="flex font-poppins text-[#333333] items-center space-x-10 dark:text-[#e0e0e0] h-20">
               {nav.map((item, index) => (
                 <li
                   key={index}
                   className="transition-colors hover:text-[#9d9d9d] hover:cursor-pointer"
                 >
                   {item.external ? (
-                    <div>
-                      <Link to="/blog">{item.title}</Link>
-                    </div>
+                    <Link to={item.link}>{item.title}</Link>
                   ) : (
                     <ScrollLink
                       to={item.link}
@@ -79,23 +75,28 @@ const NavBar = ({ nav }) => {
               ))}
             </ul>
           </div>
-          <div className={`flex justify-end relative`} onClick={toggleDarkMode}>
+
+
+          <div className={`flex justify-end relative`}>
             <div
-              className={`hover:cursor-pointer ${
+              onClick={toggleDarkMode}
+              className={` hover:cursor-pointer ${
                 darkMode ? `text-[#f0f0f0]` : `text-[#333333]`
               } text-xl`}
             >
               ☀
             </div>
           </div>
+
+
         </div>
       </nav>
       {!isOpen && (
-        <div className="md:hidden pt-2  px-5">
+        <div className="md:hidden shadow-lg z-50 dark:shadow-[#e53939] pt-2  px-5">
           <div className="flex items-center justify-between">
             <div>
               {darkMode ? (
-                <img src={djdark} className="h-16 w-16 bg-black" />
+                <img src={djdark} className="h-16 w-16" />
               ) : (
                 <img src={dj} className="h-16 w-16" />
               )}

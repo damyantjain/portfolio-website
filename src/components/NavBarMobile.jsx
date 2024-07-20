@@ -16,7 +16,7 @@ const NavBarMobile = ({ nav, isOpen, setIsOpen }) => {
 
   if (isOpen) {
     return (
-      <div className="fixed inset-0 dark:bg-[#121212] bg-white z-50 flex flex-col justify-center items-center">
+      <div className="fixed inset-0 dark:bg-[#121212]  bg-white z-50 flex flex-col justify-center items-center">
         <button
           onClick={toggleMenu}
           className="dark:text-white text-3xl font-extralight absolute top-4 right-4"
