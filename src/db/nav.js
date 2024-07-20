@@ -18,7 +18,12 @@ const nav = [
   {
     title: "Contact",
     link: "contact",  
-  }
+  },
+  // {
+  //   title: "Blog",
+  //   link: "blog",
+  //   external: true, 
+  // }
 ];
 
 export default nav;

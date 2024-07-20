@@ -1,10 +1,9 @@
-import nav from "../db/nav";
 import { Link } from "react-scroll";
 import useCalculateDuration from "../util/useCalculateDuration";
 import { useContext } from "react";
 import ThemeContext from "../context/ThemeContext";
 
-const NavBarMobile = ({ isOpen, setIsOpen }) => {
+const NavBarMobile = ({ nav, isOpen, setIsOpen }) => {
   const { darkMode, setDarkMode } = useContext(ThemeContext);
   const toggleMenu = () => {
     setIsOpen(!isOpen);
@@ -17,7 +16,7 @@ const NavBarMobile = ({ isOpen, setIsOpen }) => {
 
   if (isOpen) {
     return (
-      <div className="fixed inset-0 dark:bg-[#121212] bg-white z-50 flex flex-col justify-center items-center">
+      <div className="fixed inset-0 dark:bg-[#121212]  bg-white z-50 flex flex-col justify-center items-center">
         <button
           onClick={toggleMenu}
           className="dark:text-white text-3xl font-extralight absolute top-4 right-4"

@@ -1,10 +1,15 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
 import Portfolio from "./components/Portfolio";
-import NavBar from "./components/NavBar";
+import BlogHome from "./components/BlogHome";
 import ThemeContext from "./context/ThemeContext";
 import { useState, useEffect } from "react";
-import { createBrowserRouter, Outlet, RouterProvider, Navigate } from "react-router-dom";
+import {
+  createBrowserRouter,
+  Outlet,
+  RouterProvider,
+  Navigate,
+} from "react-router-dom";
 
 const AppLayout = () => {
   const getInitialMode = () => {
@@ -15,6 +20,7 @@ const AppLayout = () => {
 
   useEffect(() => {
     localStorage.setItem("dark", darkMode);
+    document.body.style.backgroundColor = darkMode ? "#121212" : "";
   }, [darkMode]);
 
   return (
@@ -36,9 +42,13 @@ const appRouter = createBrowserRouter([
         element: <Portfolio />,
       },
       {
+        path: "/blog",
+        element: <BlogHome />,
+      },
+      {
         path: "*",
-        element: <Navigate to="/" />
-      }
+        element: <Navigate to="/" />,
+      },
     ],
   },
 ]);

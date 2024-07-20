@@ -4,7 +4,7 @@ import Typewriter from 'typewriter-effect';
 
 const Intro = () => {
   return (
-    <div className="h-screen md:h-[calc(100vh-80px)] flex justify-center items-center">
+    <div className="h-screen md:h-[calc(100vh-80px)] mt-5 flex justify-center items-center">
       <div className="flex flex-col lg:flex-row lg:mx-24 lg:gap-4">
         {/* About Me */}
         <div className="px-10 w-full lg:w-8/12 flex flex-col items-center justify-center">
