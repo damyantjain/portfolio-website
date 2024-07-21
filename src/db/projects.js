@@ -14,7 +14,7 @@ const projects = [
     title: "Customer Manager",
 
     description:
-      "A powerful WPF-based client for managing customer data, leveraging gRPC services for high performance and scalability. Ideal for businesses needing reliable customer management solutions.",
+      "A powerful WPF-based client for managing customer data, leveraging gRPC services for high performance and scalability utilizing streaming and asynchronous communication.",
 
     image: "customerManagement",
 

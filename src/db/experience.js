@@ -1,6 +1,6 @@
 const experience = [
     {
-      company: "West Pharmaceuticals Service",
+      company: "West Pharmaceuticals Services",
       position: "Software Engineer",
       location: "Bangalore, India",
       duration: "July 2020 - July 2023",
