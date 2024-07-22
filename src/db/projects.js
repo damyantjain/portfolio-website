@@ -11,17 +11,6 @@ const projects = [
   },
 
   {
-    title: "Customer Manager",
-
-    description:
-      "A powerful WPF-based client for managing customer data, leveraging gRPC services for high performance and scalability utilizing streaming and asynchronous communication.",
-
-    image: "customerManagement",
-
-    link: "https://github.com/damyantjain/WPF-Customer-App",
-  },
-
-  {
     title: "Jiffy",
 
     description:
@@ -41,6 +30,17 @@ const projects = [
     image: "admitly",
 
     link: "https://github.com/gauravtejwani24/UniversityApplicationPortal",
+  },
+
+  {
+    title: "Customer Manager",
+
+    description:
+      "A powerful WPF-based client for managing customer data, leveraging gRPC services for high performance and scalability utilizing streaming and asynchronous communication.",
+
+    image: "customerManagement",
+
+    link: "https://github.com/damyantjain/WPF-Customer-App",
   },
 ];
 
