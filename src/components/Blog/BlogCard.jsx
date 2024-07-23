@@ -1,11 +1,9 @@
 import { BASE_URL } from "../../util/constants";
 import { Link } from "react-router-dom";
 const BlogCard = ({ post }) => {
-  const handleBlogClick = () => {};
-
   return (
     <div>
-      <Link to={post._id  }>
+      <Link to={post._id}>
         <div className="flex justify-between hover:cursor-pointer">
           <div>
             <h2 className="text-xl md:text-2xl text-[#333333] dark:text-[#e0e0e0] font-bold">
@@ -15,7 +13,11 @@ const BlogCard = ({ post }) => {
               {post?.description}
             </p>
             <p className="mt-5 text-gray-500 text-sm dark:text-gray-400">
-              {post?.date}
+              {new Date(post?.date).toLocaleDateString("en-US", {
+                day: "numeric",
+                month: "short",
+                year: "numeric",
+              })}
             </p>
           </div>
           <img
