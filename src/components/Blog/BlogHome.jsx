@@ -19,7 +19,7 @@ const BlogHome = () => {
   return (
     <div>
       {/* Blog Home */}
-      <div id="BlogHome">
+      <div className="mx-5 md:mx-16 lg:mx-32 xl:mx-44">
         {/* All posts */}
         <h1 className="text-xl md:text-2xl text-[#333333] dark:text-[#e0e0e0] font-poppins mt-5 mb-10">
           Reads
