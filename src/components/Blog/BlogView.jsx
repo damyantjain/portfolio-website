@@ -1,21 +1,36 @@
+import { useParams } from "react-router-dom";
+import { useEffect, useState } from "react";
+import { BLOGS_URL } from "../../util/constants";
+import BlogContent from "./BlogContent";
+
 const BlogView = () => {
-  const blog = {
-    title: "Blog Title",
-    date: "July 23, 2021",
-    image: "",
-    content:
-      "Test content for the blog view",
-  };
+  const { id } = useParams();
+
+  const [blog, setBlog] = useState({});
+
+  useEffect(() => {
+    fetch(`${BLOGS_URL}/${id}`)
+      .then((res) => res.json())
+      .then((data) => setBlog(data));
+  }, []);
+
   return (
-    <div className="p-4 bg-white dark:bg-[#121212] dark:text-white rounded-lg">
-      <h1 className="text-3xl font-bold">{blog.title}</h1>
-      <p className="text-sm text-gray-500">{blog.date}</p>
-      <img
-        src={blog.image}
-        alt={blog.title}
-        className="w-full h-96 object-cover rounded-lg mt-4"
-      />
-      <p className="text-lg mt-4">{blog.content}</p>
+    <div className="w-full flex items-center justify-center">
+      <div className="dark:bg-[#121212] text-[#333333] dark:text-[#e0e0e0] md:mx-0 sm:mx-10 mx-5 w-full md:w-[680px]">
+        <h1 className="text-[42px] font-bold">{blog.title}</h1>
+        <p className="text-sm text-gray-500">
+          {new Date(blog.date).toLocaleDateString("en-US", {
+            day: "numeric",
+            month: "short",
+            year: "numeric",
+          })}
+        </p>
+        <img
+          src={blog.image}
+          className="object-cover rounded-lg mt-4"
+        />
+        <BlogContent blog={blog} />
+      </div>
     </div>
   );
 };

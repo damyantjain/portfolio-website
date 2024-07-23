@@ -14,6 +14,7 @@ module.exports = {
         poppins: ['Poppins', 'sans-serif'],
         merriweather: ['Merriweather', 'serif'],
         raleway: ['Raleway', 'sans-serif'],
+        serif: ['"Source Serif Pro"', 'Georgia', 'Cambria', '"Times New Roman"', 'Times', 'serif']
       },
     },
   },
