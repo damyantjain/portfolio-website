@@ -5,6 +5,7 @@ import BlogHome from "./components/Blog/BlogHome";
 import BlogView from "./components/Blog/BlogView";
 import BlogLayout from "./components/Blog/BlogLayout";
 import ThemeContext from "./context/ThemeContext";
+import Login from "./components/Blog/Login";
 import { useState, useEffect } from "react";
 import {
   createBrowserRouter,
@@ -54,6 +55,10 @@ const appRouter = createBrowserRouter([
           {
             path: ":id",
             element: <BlogView />,
+          },
+          {
+            path: "login",
+            element: <Login />,
           },
         ],
       },
