@@ -7,12 +7,27 @@ const BlogView = () => {
   const { id } = useParams();
 
   const [blog, setBlog] = useState({});
+  const [blogNotFound, setBlogNotFound] = useState(false);
 
   useEffect(() => {
-    fetch(`${BLOGS_URL}/${id}`)
-      .then((res) => res.json())
-      .then((data) => setBlog(data));
+    getBlog();
   }, []);
+
+  const getBlog = async () => {
+    var response = await fetch(`${BLOGS_URL}/${id}`);
+    if (!response.ok) {
+      setBlogNotFound(true);
+      return;
+    }
+    var data = await response.json();
+    setBlog(data);
+  };  
+
+  if (blogNotFound) {
+    return <div className="">
+      <h1 className="text-3xl font-poppins text-[#333333] dark:text-[#e0e0e0] text-center mt-10">Blog not found</h1>
+    </div>;
+  }
 
   return (
     <div className="w-full flex items-center justify-center">
@@ -25,10 +40,7 @@ const BlogView = () => {
             year: "numeric",
           })}
         </p>
-        <img
-          src={blog.image}
-          className="object-cover rounded-lg mt-4"
-        />
+        <img src={blog.image} className="object-cover rounded-lg mt-4" />
         <BlogContent blog={blog} />
       </div>
     </div>
