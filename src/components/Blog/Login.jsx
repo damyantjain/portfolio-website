@@ -1,10 +1,12 @@
 import { useState } from "react";
 import { encrypt, decrypt } from "../../util/encrypt";
 import { LOGIN_URL } from "../../util/constants";
+import { useNavigate } from "react-router-dom";
 
 const Login = () => {
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
+  const navigate = useNavigate();
 
   const handleLoginClick = async () => {
     const encryptedPassword = encrypt(password);
@@ -23,10 +25,19 @@ const Login = () => {
       const body = await response.json();
       localStorage.setItem("token", body.token);
       clearFields();
+      navigate("/blog/edit");
     } else {
       showMessage("Login failed");
     }
   };
+
+
+  const handlLoginClick = () => {
+    const response = fetch(LOGIN_URL, {})
+    if(response.ok){
+      navigate("/blog/edit");
+    }
+  }
 
   const clearFields = () => {
     setUsername("");
