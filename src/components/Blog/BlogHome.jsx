@@ -27,7 +27,7 @@ const BlogHome = () => {
         <div className="pb-56">
           {posts.map((post) => {
             return (
-              <div key={post?.id} className="pt-10">
+              <div key={post?._id} className="pt-10">
                 <BlogCard post={post} />
               </div>
             );
