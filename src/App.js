@@ -4,6 +4,8 @@ import Portfolio from "./components/Portfolio";
 import blogRoute from "./routes/blogRoute";
 import ThemeContext from "./context/ThemeContext";
 import { useState, useEffect } from "react";
+import { Provider } from "react-redux";
+import appStore from "./store/appStore";
 import {
   createBrowserRouter,
   Outlet,
@@ -24,11 +26,13 @@ const AppLayout = () => {
   }, [darkMode]);
 
   return (
-    <ThemeContext.Provider value={{ darkMode: darkMode, setDarkMode }}>
-      <div className={`dark:bg-[#121212] ${darkMode ? "dark" : ""} `}>
-        <Outlet />
-      </div>
-    </ThemeContext.Provider>
+    <Provider store={appStore}>
+      <ThemeContext.Provider value={{ darkMode: darkMode, setDarkMode }}>
+        <div className={`dark:bg-[#121212] ${darkMode ? "dark" : ""} `}>
+          <Outlet />
+        </div>
+      </ThemeContext.Provider>
+    </Provider>
   );
 };
 

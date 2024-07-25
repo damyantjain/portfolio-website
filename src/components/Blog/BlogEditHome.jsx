@@ -1,12 +1,14 @@
 import { useState, useEffect } from "react";
 import { BLOGS_URL } from "../../util/constants";
 import { useParams } from "react-router-dom";
+import { useDispatch } from "react-redux";
+import { addBlog } from "../../store/blogSlice";
 
 const BlogEditHome = () => {
-  const [blog, setBlog] = useState({});
-  const [editedBlog, setEditedBlog] = useState({});
-
   const { id } = useParams();
+  const [blog, setBlog] = useState({ title: "", description: "" });
+  const [editedBlog, setEditedBlog] = useState({ title: "", description: "" });
+  const dispatch = useDispatch();
 
   useEffect(() => {
     getBlog();
@@ -21,6 +23,7 @@ const BlogEditHome = () => {
     var data = await response.json();
     setBlog(data);
     setEditedBlog(data);
+    dispatch(addBlog(data));
   };
 
   return (
@@ -31,8 +34,10 @@ const BlogEditHome = () => {
           <div>Title</div>
           <input
             type="text"
-            value={editedBlog.title}
-            onChange={(e) => setBlog({ ...editedBlog, title: e.target.value })}
+            value={editedBlog?.title}
+            onChange={(e) =>
+              setEditedBlog({ ...editedBlog, title: e.target.value })
+            }
             className="border-2 border-gray-300 p-2 w-full"
           />
         </div>
@@ -41,8 +46,10 @@ const BlogEditHome = () => {
           <div>Description</div>
           <textarea
             type="text"
-            value={editedBlog.description}
-            onChange={(e) => setBlog({ ...editedBlog, description: e.target.value })}
+            value={editedBlog?.description}
+            onChange={(e) =>
+              setEditedBlog({ ...editedBlog, description: e.target.value })
+            }
             className="border-2 border-gray-300 p-2 w-full"
           />
         </div>
