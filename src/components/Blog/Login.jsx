@@ -31,22 +31,14 @@ const Login = () => {
     }
   };
 
-
-  const handlLoginClick = () => {
-    const response = fetch(LOGIN_URL, {})
-    if(response.ok){
-      navigate("/blog/edit");
-    }
-  }
-
   const clearFields = () => {
     setUsername("");
     setPassword("");
-  }
+  };
 
   const showMessage = (message) => {
     alert(message);
-  }
+  };
 
   return (
     <div className="flex items-center flex-col">
@@ -54,7 +46,6 @@ const Login = () => {
         <div className="font-poppins text-center mb-10 mt-6 text-2xl text-[#333333] dark:text-[#e0e0e0]">
           Reads
         </div>
-        {/* <form className="group relative m-10"> */}
         <input
           type="text"
           value={username}
@@ -77,7 +68,6 @@ const Login = () => {
         >
           Login
         </button>
-        {/* </form> */}
       </div>
     </div>
   );
