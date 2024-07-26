@@ -1,21 +1,34 @@
 import { Navigate } from "react-router-dom";
 import { jwtDecode } from "jwt-decode";
+import { getAccessToken, isTokenExpired } from "../util/tokenService";
+import { useEffect, useState } from "react";
+import { refreshAccessToken } from "../util/commonAPI";
 
 const ProtectedComponent = ({ children }) => {
-  const token = localStorage.getItem("token");
-  if (!token) {
-    return <Navigate to="/blog/login" />;
-  }
-  try {
-    const decodedToken = jwtDecode(token);
-    if (decodedToken?.exp - Date.now() / 1000 <= 0) {
-      return <Navigate to="/blog/login" />;
+  const [isAuthenticated, setIsAuthenticated] = useState(false);
+  const [isLoading, setIsLoading] = useState(true);
+  useEffect(() => {
+    checkToken();
+  }, []);
+
+  const checkToken = async () => {
+    let token = getAccessToken();
+    if (isTokenExpired(token)) {
+      token = await refreshAccessToken();
+      if (!token) {
+        setIsAuthenticated(false);
+        setIsLoading(false);
+        return;
+      }
     }
-  } catch (e) {
-    console.log("Invalid token", e);
-    localStorage.removeItem("token");
-    return <Navigate to="/blog/login" />;
+    setIsAuthenticated(true);
+    setIsLoading(false);
+  };
+
+  if (isLoading) {
+    return <div>Loading...</div>;
   }
-  return children;
+
+  return isAuthenticated ? children : <Navigate to="/blog/login" />;
 };
 export default ProtectedComponent;
