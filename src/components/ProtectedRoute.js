@@ -8,22 +8,21 @@ const ProtectedComponent = ({ children }) => {
   const [isAuthenticated, setIsAuthenticated] = useState(false);
   const [isLoading, setIsLoading] = useState(true);
   useEffect(() => {
+    const checkToken = async () => {
+      let token = getAccessToken();
+      if (isTokenExpired(token)) {
+        token = await refreshAccessToken();
+        if (!token) {
+          setIsAuthenticated(false);
+          setIsLoading(false);
+          return;
+        }
+      }
+      setIsAuthenticated(true);
+      setIsLoading(false);
+    };
     checkToken();
   }, []);
-
-  const checkToken = async () => {
-    let token = getAccessToken();
-    if (isTokenExpired(token)) {
-      token = await refreshAccessToken();
-      if (!token) {
-        setIsAuthenticated(false);
-        setIsLoading(false);
-        return;
-      }
-    }
-    setIsAuthenticated(true);
-    setIsLoading(false);
-  };
 
   if (isLoading) {
     return <div>Loading...</div>;
