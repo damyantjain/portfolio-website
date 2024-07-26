@@ -2,6 +2,7 @@ import { useState } from "react";
 import { encrypt, decrypt } from "../../util/encrypt";
 import { LOGIN_URL } from "../../util/constants";
 import { useNavigate } from "react-router-dom";
+import { setAccessToken } from "../../util/tokenService";
 
 const Login = () => {
   const [username, setUsername] = useState("");
@@ -17,13 +18,14 @@ const Login = () => {
         username: encryptedUsername,
         password: encryptedPassword,
       }),
+      credentials: 'include',
       headers: {
         "Content-Type": "application/json",
       },
     });
     if (response.ok) {
       const body = await response.json();
-      localStorage.setItem("token", body.token);
+      setAccessToken(body.accessToken);
       clearFields();
       navigate("/blog/edit");
     } else {
