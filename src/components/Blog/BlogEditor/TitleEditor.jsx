@@ -4,7 +4,6 @@ import { useDispatch, useSelector } from "react-redux";
 const TitleEditor = () => {
   const dispatch = useDispatch();
   const editedBlog = useSelector((state) => state.blog.editedBlog);
-  console.log(editedBlog);
 
   return (
     <div className="mb-5">

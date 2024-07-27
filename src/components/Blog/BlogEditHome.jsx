@@ -5,6 +5,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { addBlog } from "../../store/blogSlice";
 import DescriptionEditor from "./BlogEditor/DescriptionEditor";
 import TitleEditor from "./BlogEditor/TitleEditor";
+import BlogContent from "./BlogEditor/BlogContent";
 
 const BlogEditHome = () => {
   const { id } = useParams();
@@ -31,6 +32,7 @@ const BlogEditHome = () => {
       <div>
         <TitleEditor />
         <DescriptionEditor />
+        <BlogContent />
       </div>
     </div>
   );

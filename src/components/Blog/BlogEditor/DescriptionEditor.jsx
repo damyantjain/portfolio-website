@@ -6,7 +6,7 @@ const DescriptionEditor = () => {
   const editedBlog = useSelector((state) => state.blog.editedBlog);
 
   return (
-    <div>
+    <div className="mb-5">
       <div>Description</div>
       <textarea
         type="text"
