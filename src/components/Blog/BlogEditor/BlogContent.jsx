@@ -52,15 +52,13 @@ const BlogContent = () => {
           onClick={() => saveBlog(false)}
           className="bg-green-500 text-white p-2 rounded-lg"
         >
-          {" "}
-          Save Draft{" "}
+          Save Draft
         </button>
         <button
           onClick={() => saveBlog(true)}
           className="bg-blue-500 text-white p-2 rounded-lg ml-3"
         >
-          {" "}
-          Publish{" "}
+          Publish
         </button>
       </div>
     </div>

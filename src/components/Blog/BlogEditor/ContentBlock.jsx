@@ -1,4 +1,5 @@
 import TextBlock from "./TextBlock";
+import ImageBlock from "./ImageBlock";
 import { useSelector } from "react-redux";
 
 const ContentBlock = () => {
@@ -9,9 +10,9 @@ const ContentBlock = () => {
       {editedBlog?.contentBlocks?.map((contentBlock, index) => (
         <div key={index} className="mb-5">
           {contentBlock?.type === "text" ? (
-            <TextBlock contentBlock={contentBlock} index={index} />
+            <TextBlock contentBlock={contentBlock} />
           ) : (
-            "Image Block"
+            <ImageBlock contentBlock={contentBlock} />
           )}
         </div>
       ))}

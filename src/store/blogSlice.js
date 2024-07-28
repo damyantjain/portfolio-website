@@ -8,6 +8,7 @@ const blogSlice = createSlice({
     editedBlog: { title: "", description: "", contentBlocks: [] },
   },
   reducers: {
+    //blog
     addBlog: (state, action) => {
       state.blog = action.payload;
       state.editedBlog = action.payload;
@@ -18,16 +19,31 @@ const blogSlice = createSlice({
     updateDescription: (state, action) => {
       state.editedBlog.description = action.payload;
     },
+
     updateContent: (state, action) => {
-      state.editedBlog.contentBlocks[action.payload.index].content =
-        action.payload.content;
+      var index = state.editedBlog.contentBlocks.findIndex(
+        (x) => x._id === action.payload._id
+      );
+
+      state.editedBlog.contentBlocks[index].content = action.payload.content;
     },
+    updateCaption: (state, action) => {
+      var index = state.editedBlog.contentBlocks.findIndex(
+        (x) => x._id === action.payload._id
+      );
+
+      state.editedBlog.contentBlocks[index].caption = action.payload.caption;
+    },
+
+    //block
     addBlock: (state, action) => {
       action.payload = { ...action.payload, _id: uuidv4() };
       state.editedBlog.contentBlocks.push(action.payload);
     },
     deleteBlock: (state, action) => {
-      state.editedBlog.contentBlocks = state.editedBlog.contentBlocks.filter((x) => x._id !== action.payload);
+      state.editedBlog.contentBlocks = state.editedBlog.contentBlocks.filter(
+        (x) => x._id !== action.payload
+      );
     },
   },
 });
@@ -38,5 +54,6 @@ export const {
   updateContent,
   addBlock,
   deleteBlock,
+  updateCaption,
 } = blogSlice.actions;
 export default blogSlice.reducer;

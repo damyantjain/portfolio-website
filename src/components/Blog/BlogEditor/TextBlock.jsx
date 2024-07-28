@@ -2,7 +2,7 @@ import { updateContent } from "../../../store/blogSlice";
 import { useDispatch, useSelector } from "react-redux";
 import EditorOption from "./EditorOption";
 
-const TextBlock = ({ contentBlock, index }) => {
+const TextBlock = ({ contentBlock }) => {
   const dispatch = useDispatch();
   return (
     <div>
@@ -15,7 +15,9 @@ const TextBlock = ({ contentBlock, index }) => {
         className="border-2 border-gray-300 p-2 w-full"
         value={contentBlock?.content}
         onChange={(e) => {
-          dispatch(updateContent({ content: e.target.value, index }));
+          dispatch(
+            updateContent({ content: e.target.value, _id: contentBlock._id })
+          );
         }}
       />
     </div>
