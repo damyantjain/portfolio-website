@@ -1,7 +1,7 @@
 import { useEffect } from "react";
 import { BLOGS_URL } from "../../util/constants";
 import { useParams } from "react-router-dom";
-import { useDispatch, useSelector } from "react-redux";
+import { useDispatch } from "react-redux";
 import { addBlog } from "../../store/blogSlice";
 import DescriptionEditor from "./BlogEditor/DescriptionEditor";
 import TitleEditor from "./BlogEditor/TitleEditor";
@@ -18,22 +18,28 @@ const BlogEditHome = () => {
   const getBlog = async () => {
     var response = await fetch(`${BLOGS_URL}/${id}`);
     if (!response.ok) {
-      setBlogNotFound(true);
+      console.error("Blog not found");
       return;
     }
     var data = await response.json();
     dispatch(addBlog(data));
   };
 
-  const editedBlog = useSelector((state) => state.blog);
-
   return (
-    <div className="mx-5 md:mx-16 lg:mx-32 xl:mx-44">
-      <div>
+    <div className="mx-5 md:mx-16 lg:mx-32 xl:mx-44 dark:bg-[#121212] min-h-screen">
+      <div className="flex justify-between items-center mb-5">
+        <h1 className="text-2xl font-bold text-gray-800 dark:text-gray-200">
+          Edit Blog
+        </h1>
+        <button className="bg-gray-800 py-2 px-3 text-white rounded-lg shadow-md hover:bg-gray-700 transition-all duration-300 dark:bg-gray-700 dark:hover:bg-gray-600">
+          Preview
+        </button>
+      </div>
+      <div className="mx-auto px-4 w-full dark:bg-[#2222222d] rounded-xl p-6 border border-gray-200 dark:border-0 mb-6">
         <TitleEditor />
         <DescriptionEditor />
-        <BlogContent />
       </div>
+      <BlogContent />
     </div>
   );
 };
