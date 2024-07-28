@@ -12,7 +12,7 @@ const BlogHome = ({ mode }) => {
   const getBlogs = async () => {
     var response = await fetch(mode === "edit" ? BLOGS_URL : PUBLISHED_BLOGS);
     if (!response.ok) {
-      posts = [];
+      setPosts([]);
       return;
     } else {
       var data = await response.json();
