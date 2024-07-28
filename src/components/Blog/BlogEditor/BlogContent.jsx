@@ -33,30 +33,30 @@ const BlogContent = () => {
   return (
     <div>
       <ContentBlock />
-      <div className="flex">
+      <div className="flex my-5">
         <select
           onChange={(e) => setBlockType(e.target.value)}
-          className="border-2 mr-3 border-gray-300 p-2 w-32"
+          className="border-2 mr-3 border-gray-300 p-2 w-32 rounded-lg"
         >
           <option value="text">Text</option>
           <option value="image">Image</option>
         </select>
         <i
           onClick={() => dispatch(addBlock({ type: blockType, content: "" }))}
-          className="fas fa-plus-circle fa-2x"
+          className="fas fa-plus-circle fa-2x cursor-pointer"
           style={{ color: darkMode ? "green" : "green" }}
         ></i>
       </div>
-      <div className="mt-5 flex">
+      <div className="mt-6 flex space-x-4">
         <button
           onClick={() => saveBlog(false)}
-          className="bg-green-500 text-white p-2 rounded-lg"
+          className="flex-1 bg-gray-800 text-white py-3 rounded-lg shadow-md hover:bg-gray-700 transition-all duration-300 dark:bg-gray-700 dark:hover:bg-gray-600"
         >
           Save Draft
         </button>
         <button
           onClick={() => saveBlog(true)}
-          className="bg-blue-500 text-white p-2 rounded-lg ml-3"
+          className="flex-1 bg-gray-800 text-white py-3 rounded-lg shadow-md hover:bg-gray-700 transition-all duration-300 dark:bg-gray-700 dark:hover:bg-gray-600"
         >
           Publish
         </button>
