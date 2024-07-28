@@ -12,7 +12,7 @@ const blogRoute = {
   children: [
     {
       path: "",
-      element: <BlogHome />,
+      element: <BlogHome mode="read" />,
     },
     {
       path: "login",
@@ -23,7 +23,7 @@ const blogRoute = {
       children: [
         {
           path: "",
-          element: <ProtectedRoute children={<BlogHome />} />,
+          element: <ProtectedRoute children={<BlogHome mode="edit" />} />,
         },
         {
           path: ":id",
