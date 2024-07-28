@@ -1,4 +1,4 @@
-import { REFRESH_TOKEN } from "./constants";
+import { REFRESH_TOKEN, BLOGS_URL } from "./constants";
 import { setAccessToken, removeAccessToken } from "./tokenService";
 
 export const refreshAccessToken = async () => {
@@ -17,4 +17,16 @@ export const refreshAccessToken = async () => {
     removeAccessToken();
   }
   return null;
+};
+
+
+export const saveBlog = async ({editedBlog, publish}) => {
+  console.log(JSON.stringify({ ...editedBlog, published: publish }));
+  return response = await fetch(`${BLOGS_URL}/${editedBlog._id}`, {
+    method: "PUT",
+    headers: {
+      "Content-Type": "application/json",
+    },
+    body: JSON.stringify({ ...editedBlog, published: publish }),
+  });
 };

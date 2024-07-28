@@ -4,6 +4,7 @@ import BlogLayout from "../components/Blog/BlogLayout";
 import BlogEditHome from "../components/Blog/BlogEditHome";
 import ProtectedRoute from "../components/ProtectedRoute";
 import Login from "../components/Blog/Login";
+import BlogPreview from "../components/Blog/BlogEditor/BlogPreview";
 
 const blogRoute = {
   path: "blog",
@@ -26,7 +27,16 @@ const blogRoute = {
         },
         {
           path: ":id",
-          element: <ProtectedRoute children={<BlogEditHome />} />,
+          children: [
+            {
+              path: "",
+              element: <ProtectedRoute children={<BlogEditHome />} />,
+            },
+            {
+              path: "preview",
+              element: <ProtectedRoute children={<BlogPreview />} />,
+            },
+          ],
         },
       ],
     },

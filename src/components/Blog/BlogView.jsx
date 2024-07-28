@@ -10,6 +10,7 @@ const BlogView = () => {
   const [blogNotFound, setBlogNotFound] = useState(false);
 
   useEffect(() => {
+    console.log("BlogView useEffect");
     getBlog();
   }, []);
 
