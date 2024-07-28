@@ -1,4 +1,6 @@
 import { createSlice } from "@reduxjs/toolkit";
+import { v4 as uuidv4 } from "uuid";
+
 const blogSlice = createSlice({
   name: "blogSlice",
   initialState: {
@@ -21,7 +23,11 @@ const blogSlice = createSlice({
         action.payload.content;
     },
     addBlock: (state, action) => {
+      action.payload = { ...action.payload, _id: uuidv4() };
       state.editedBlog.contentBlocks.push(action.payload);
+    },
+    deleteBlock: (state, action) => {
+      state.editedBlog.contentBlocks = state.editedBlog.contentBlocks.filter((x) => x._id !== action.payload);
     },
   },
 });
@@ -31,5 +37,6 @@ export const {
   updateDescription,
   updateContent,
   addBlock,
+  deleteBlock,
 } = blogSlice.actions;
 export default blogSlice.reducer;
