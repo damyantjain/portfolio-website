@@ -3,8 +3,8 @@ import ContentBlock from "./ContentBlock";
 import { useContext, useState } from "react";
 import ThemeContext from "../../../context/ThemeContext";
 import { addBlock } from "../../../store/blogSlice";
-import { BLOGS_URL } from "../../../util/constants";
 import { useParams } from "react-router-dom";
+import { saveBlog } from "../../../util/commonAPI";
 
 const BlogContent = () => {
   const { darkMode } = useContext(ThemeContext);
@@ -13,15 +13,8 @@ const BlogContent = () => {
   const editedBlog = useSelector((state) => state.blog.editedBlog);
   const { id } = useParams();
 
-  const saveBlog = async (publish) => {
-    console.log(JSON.stringify({ ...editedBlog, published: publish }));
-    var response = await fetch(`${BLOGS_URL}/${id}`, {
-      method: "PUT",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify({ ...editedBlog, published: publish }),
-    });
+  const handleSaveBlog = async (publish) => {
+    var response = await saveBlog({ editedBlog, publish });
     if (!response.ok) {
       alert("Error saving blog");
       return;
@@ -49,13 +42,13 @@ const BlogContent = () => {
       </div>
       <div className="mt-6 flex space-x-4">
         <button
-          onClick={() => saveBlog(false)}
+          onClick={() => handleSaveBlog(false)}
           className="flex-1 bg-gray-800 text-white py-3 rounded-lg shadow-md hover:bg-gray-700 transition-all duration-300 dark:bg-gray-700 dark:hover:bg-gray-600"
         >
           Save Draft
         </button>
         <button
-          onClick={() => saveBlog(true)}
+          onClick={() => handleSaveBlog(true)}
           className="flex-1 bg-gray-800 text-white py-3 rounded-lg shadow-md hover:bg-gray-700 transition-all duration-300 dark:bg-gray-700 dark:hover:bg-gray-600"
         >
           Publish
