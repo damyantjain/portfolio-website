@@ -27,10 +27,15 @@ const BlogEditHome = () => {
 
   return (
     <div className="mx-5 md:mx-16 lg:mx-32 xl:mx-44 dark:bg-[#121212] min-h-screen">
-      <h1 className="text-2xl font-bold text-gray-800 dark:text-gray-200 mb-5">
-        Edit Blog
-      </h1>
-      <div className="mx-auto px-4 w-full  dark:bg-[#2222222d] rounded-xl p-6 border border-gray-200 dark:border-0 mb-6">
+      <div className="flex justify-between items-center mb-5">
+        <h1 className="text-2xl font-bold text-gray-800 dark:text-gray-200">
+          Edit Blog
+        </h1>
+        <button className="bg-gray-800 py-2 px-3 text-white rounded-lg shadow-md hover:bg-gray-700 transition-all duration-300 dark:bg-gray-700 dark:hover:bg-gray-600">
+          Preview
+        </button>
+      </div>
+      <div className="mx-auto px-4 w-full dark:bg-[#2222222d] rounded-xl p-6 border border-gray-200 dark:border-0 mb-6">
         <TitleEditor />
         <DescriptionEditor />
       </div>
