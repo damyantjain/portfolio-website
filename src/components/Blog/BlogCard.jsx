@@ -13,7 +13,7 @@ const BlogCard = ({ post }) => {
               {post?.description}
             </p>
             <p className="mt-5 text-gray-500 text-sm dark:text-gray-400">
-              {new Date(post?.date).toLocaleDateString("en-US", {
+              {new Date(post?.updatedAt).toLocaleDateString("en-US", {
                 day: "numeric",
                 month: "short",
                 year: "numeric",

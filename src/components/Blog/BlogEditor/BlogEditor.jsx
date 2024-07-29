@@ -21,7 +21,12 @@ const BlogEditHome = () => {
       alert("Error saving blog");
       return;
     } else {
-      navigate(`preview`);
+      if (!id) {
+        var data = await response.json();
+        navigate(`/blog/edit/${data._id}/preview`, { replace: true });
+      } else {
+        navigate(`preview`);
+      }
     }
   };
 
@@ -30,7 +35,11 @@ const BlogEditHome = () => {
       getBlog();
     } else {
       dispatch(
-        addBlog({ title: "New Blog", description: "Some description", author: "Damyant Jain" })
+        addBlog({
+          title: "New Blog",
+          description: "Some description",
+          author: "Damyant Jain",
+        })
       );
     }
   }, []);
