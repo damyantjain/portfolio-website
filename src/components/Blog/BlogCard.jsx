@@ -1,6 +1,7 @@
 import { BASE_URL } from "../../util/constants";
 import { Link } from "react-router-dom";
 const BlogCard = ({ post }) => {
+  console.log(post);
   return (
     <div>
       <Link to={post._id}>
@@ -22,7 +23,7 @@ const BlogCard = ({ post }) => {
           </div>
           <img
             className="w-[80px] ml-5 md:ml-8 h-[53px] md:w-[160px] md:h-[107px] object-cover"
-            src={`${BASE_URL}${post?.image?.url}`}
+            src={post?.image}
           />
         </div>
         <div className="h-[1px] mt-10 bg-[#e2e2e2]"></div>
