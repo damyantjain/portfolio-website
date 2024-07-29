@@ -3,7 +3,7 @@ import ContentBlock from "./ContentBlock";
 import { useContext, useState } from "react";
 import ThemeContext from "../../../context/ThemeContext";
 import { addBlock } from "../../../store/blogSlice";
-import { useParams } from "react-router-dom";
+import { useParams, useNavigate } from "react-router-dom";
 import { saveBlog } from "../../../util/commonAPI";
 
 const BlogContent = () => {
@@ -12,6 +12,7 @@ const BlogContent = () => {
   const [blockType, setBlockType] = useState("text");
   const editedBlog = useSelector((state) => state.blog.editedBlog);
   const { id } = useParams();
+  const navigate = useNavigate();
 
   const handleSaveBlog = async (publish) => {
     var response = await saveBlog({ editedBlog, publish });
@@ -20,6 +21,10 @@ const BlogContent = () => {
       return;
     } else {
       alert("Blog saved successfully");
+      if (!id) {
+        var data = await response.json();
+        navigate(`/blog/edit/${data._id}`, { replace: true });
+      }
     }
   };
 

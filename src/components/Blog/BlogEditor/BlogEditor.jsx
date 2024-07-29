@@ -1,13 +1,13 @@
 import { useEffect } from "react";
-import { BLOGS_URL } from "../../util/constants";
+import { BLOGS_URL } from "../../../util/constants";
 import { useParams } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
-import { addBlog } from "../../store/blogSlice";
-import DescriptionEditor from "./BlogEditor/DescriptionEditor";
-import TitleEditor from "./BlogEditor/TitleEditor";
-import BlogContent from "./BlogEditor/BlogContent";
+import { addBlog } from "../../../store/blogSlice";
+import DescriptionEditor from "./DescriptionEditor";
+import TitleEditor from "./TitleEditor";
+import BlogContent from "./BlogContent";
 import { useNavigate } from "react-router-dom";
-import { saveBlog } from "../../util/commonAPI";
+import { saveBlog } from "../../../util/commonAPI";
 
 const BlogEditHome = () => {
   const navigate = useNavigate();
@@ -26,7 +26,13 @@ const BlogEditHome = () => {
   };
 
   useEffect(() => {
-    getBlog();
+    if (id) {
+      getBlog();
+    } else {
+      dispatch(
+        addBlog({ title: "New Blog", description: "Some description", author: "Damyant Jain" })
+      );
+    }
   }, []);
 
   const getBlog = async () => {

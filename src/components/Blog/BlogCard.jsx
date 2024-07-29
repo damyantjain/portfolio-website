@@ -1,7 +1,6 @@
 import { BASE_URL } from "../../util/constants";
 import { Link } from "react-router-dom";
 const BlogCard = ({ post }) => {
-  console.log(post);
   return (
     <div>
       <Link to={post._id}>

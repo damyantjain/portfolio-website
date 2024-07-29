@@ -1,10 +1,11 @@
 import BlogHome from "../components/Blog/BlogHome";
 import BlogView from "../components/Blog/BlogView";
 import BlogLayout from "../components/Blog/BlogLayout";
-import BlogEditHome from "../components/Blog/BlogEditHome";
+import BlogEditor from "../components/Blog/BlogEditor/BlogEditor";
 import ProtectedRoute from "../components/ProtectedRoute";
 import Login from "../components/Blog/Login";
 import BlogPreview from "../components/Blog/BlogEditor/BlogPreview";
+import BlogEditHome from "../components/Blog/BlogEditor/BlogEditHome";
 
 const blogRoute = {
   path: "blog",
@@ -12,7 +13,7 @@ const blogRoute = {
   children: [
     {
       path: "",
-      element: <BlogHome mode="read" />,
+      element: <BlogHome />,
     },
     {
       path: "login",
@@ -23,14 +24,18 @@ const blogRoute = {
       children: [
         {
           path: "",
-          element: <ProtectedRoute children={<BlogHome mode="edit" />} />,
+          element: <ProtectedRoute children={<BlogEditHome />} />,
+        },
+        {
+          path: "new",
+          element: <ProtectedRoute children={<BlogEditor />} />,
         },
         {
           path: ":id",
           children: [
             {
               path: "",
-              element: <ProtectedRoute children={<BlogEditHome />} />,
+              element: <ProtectedRoute children={<BlogEditor />} />,
             },
             {
               path: "preview",
