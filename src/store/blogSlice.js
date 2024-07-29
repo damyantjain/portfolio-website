@@ -4,7 +4,7 @@ import { v4 as uuidv4 } from "uuid";
 const blogSlice = createSlice({
   name: "blogSlice",
   initialState: {
-    blog: { title: "", description: "" },
+    blog: { title: "", description: ""},
     editedBlog: { title: "", description: "", contentBlocks: [] },
   },
   reducers: {
@@ -38,6 +38,9 @@ const blogSlice = createSlice({
     //block
     addBlock: (state, action) => {
       action.payload = { ...action.payload, _id: uuidv4() };
+      if (state.editedBlog.contentBlocks === undefined) {
+        state.editedBlog.contentBlocks = [];
+      }
       state.editedBlog.contentBlocks.push(action.payload);
     },
     deleteBlock: (state, action) => {

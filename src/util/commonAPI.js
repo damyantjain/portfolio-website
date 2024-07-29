@@ -7,7 +7,7 @@ export const refreshAccessToken = async () => {
     headers: {
       "Content-Type": "application/json",
     },
-    credentials: 'include', 
+    credentials: "include",
   });
   if (response.ok) {
     const data = await response.json();
@@ -19,14 +19,23 @@ export const refreshAccessToken = async () => {
   return null;
 };
 
-
-export const saveBlog = async ({editedBlog, publish}) => {
+export const saveBlog = async ({ editedBlog, publish }) => {
   console.log(JSON.stringify({ ...editedBlog, published: publish }));
-  return response = await fetch(`${BLOGS_URL}/${editedBlog._id}`, {
-    method: "PUT",
-    headers: {
-      "Content-Type": "application/json",
-    },
-    body: JSON.stringify({ ...editedBlog, published: publish }),
-  });
+  if (!editedBlog._id) {
+    return (response = await fetch(BLOGS_URL, {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({ ...editedBlog, published: publish }),
+    }));
+  } else {
+    return (response = await fetch(`${BLOGS_URL}/${editedBlog._id}`, {
+      method: "PUT",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({ ...editedBlog, published: publish }),
+    }));
+  }
 };
