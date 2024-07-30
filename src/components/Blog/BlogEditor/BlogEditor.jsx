@@ -6,6 +6,7 @@ import { addBlog } from "../../../store/blogSlice";
 import DescriptionEditor from "./DescriptionEditor";
 import TitleEditor from "./TitleEditor";
 import BlogContent from "./BlogContent";
+import PreviewImageEditor from "./PreviewImageEditor";
 import { useNavigate } from "react-router-dom";
 import { saveBlog } from "../../../util/commonAPI";
 
@@ -70,6 +71,7 @@ const BlogEditHome = () => {
       <div className="mx-auto px-4 w-full dark:bg-[#2222222d] rounded-xl p-6 border border-gray-200 dark:border-0 mb-6">
         <TitleEditor />
         <DescriptionEditor />
+        <PreviewImageEditor />
       </div>
       <BlogContent />
     </div>
