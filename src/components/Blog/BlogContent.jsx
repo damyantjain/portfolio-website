@@ -2,7 +2,7 @@ const BlogContent = ({ blog }) => {
   return (
     <div>
       {blog?.contentBlocks?.map((block) => (
-        <div className="mb-10">
+        <div key={block._id}  className="mb-10">
           {block.type === "text" && (
             <p className="text-[20px] font-serif antialiased mt-4">{block.content}</p>
           )}
