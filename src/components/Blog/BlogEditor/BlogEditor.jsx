@@ -19,7 +19,7 @@ const BlogEditHome = () => {
   const handlePreviewClick = async () => {
     var response = await saveBlog({ editedBlog, publish: false });
     if (!response.ok) {
-      alert("Error saving blog");
+      //alert("Error saving blog");
       return;
     } else {
       if (!id) {
