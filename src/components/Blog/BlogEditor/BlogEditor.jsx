@@ -23,8 +23,8 @@ const BlogEditHome = () => {
       return;
     } else {
       if (!id) {
-        console.log("Redirecting to newwww preview", data._id);
         var data = await response.json();
+        console.log("Redirecting to neww preview", data._id);
         navigate(`/blog/edit/${data._id}/preview`, { replace: true });
       } else {
         console.log("Redirecting to preview");
