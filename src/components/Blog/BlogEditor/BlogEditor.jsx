@@ -18,14 +18,16 @@ const BlogEditHome = () => {
 
   const handlePreviewClick = async () => {
     var response = await saveBlog({ editedBlog, publish: false });
+    console.log("response", response);
     if (!response.ok) {
-      //alert("Error saving blog");
       return;
     } else {
       if (!id) {
+        console.log("Redirecting to newwww preview", data._id);
         var data = await response.json();
         navigate(`/blog/edit/${data._id}/preview`, { replace: true });
       } else {
+        console.log("Redirecting to preview");
         navigate(`preview`);
       }
     }
