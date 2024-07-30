@@ -4,8 +4,8 @@ import { v4 as uuidv4 } from "uuid";
 const blogSlice = createSlice({
   name: "blogSlice",
   initialState: {
-    blog: { title: "", description: ""},
-    editedBlog: { title: "", description: "", contentBlocks: [] },
+    blog: { title: "", description: "" },
+    editedBlog: { title: "", description: "", image:"", contentBlocks: [] },
   },
   reducers: {
     //blog
@@ -18,6 +18,9 @@ const blogSlice = createSlice({
     },
     updateDescription: (state, action) => {
       state.editedBlog.description = action.payload;
+    },
+    updatePreviewImage: (state, action) => {
+      state.editedBlog.image = action.payload;
     },
 
     updateContent: (state, action) => {
@@ -58,5 +61,6 @@ export const {
   addBlock,
   deleteBlock,
   updateCaption,
+  updatePreviewImage,
 } = blogSlice.actions;
 export default blogSlice.reducer;

@@ -9,7 +9,7 @@ const BlogCard = ({ post }) => {
             <h2 className="text-xl md:text-2xl text-[#333333] dark:text-[#e0e0e0] font-bold">
               {post?.title}
             </h2>
-            <p className="font-poppins text-gray-500 dark:text-gray-400">
+            <p className="font-poppins text-gray-500 dark:text-gray-400 line-clamp-2">
               {post?.description}
             </p>
             <p className="mt-5 text-gray-500 text-sm dark:text-gray-400">
@@ -20,10 +20,12 @@ const BlogCard = ({ post }) => {
               })}
             </p>
           </div>
-          <img
-            className="w-[80px] ml-5 md:ml-8 h-[53px] md:w-[160px] md:h-[107px] object-cover"
-            src={post?.image}
-          />
+          {post?.image && (
+            <img
+              className="w-[80px] ml-5 md:ml-8 h-[53px] md:w-[160px] md:h-[107px] object-cover"
+              src={post?.image}
+            />
+          )}
         </div>
         <div className="h-[1px] mt-10 bg-[#e2e2e2]"></div>
       </Link>
