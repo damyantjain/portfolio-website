@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { encrypt, decrypt } from "../../util/encrypt";
+import { encrypt } from "../../util/encrypt";
 import { LOGIN_URL } from "../../util/constants";
 import { useNavigate } from "react-router-dom";
 import { setAccessToken } from "../../util/tokenService";
@@ -29,6 +29,7 @@ const Login = () => {
       clearFields();
       navigate("/blog/edit");
     } else {
+      setPassword("");
       showMessage("Login failed");
     }
   };
