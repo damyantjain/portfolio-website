@@ -35,7 +35,7 @@ const BlogView = () => {
       <div className="dark:bg-[#121212] text-[#333333] dark:text-[#e0e0e0] md:mx-0 sm:mx-10 mx-5 w-full md:w-[680px]">
         <h1 className="text-[42px] font-bold">{blog.title}</h1>
         <p className="text-sm text-gray-500">
-          {new Date(blog.date).toLocaleDateString("en-US", {
+          {new Date(blog.updatedAt).toLocaleDateString("en-US", {
             day: "numeric",
             month: "short",
             year: "numeric",
