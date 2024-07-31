@@ -2,21 +2,19 @@ import { useEffect, useState } from "react";
 import { BLOGS_URL } from "../../../util/constants";
 import BlogCardList from "../BlogCardList";
 import { useNavigate } from "react-router-dom";
-import { useSelector, useDispatch } from "react-redux";
-import { addBlog } from "../../../store/blogSlice";
-import { v4 as uuidv4 } from "uuid";
+import { useSelector } from "react-redux";
+import customFetch from "../../../util/customFetch";
 
 const BlogEditHome = ({ mode }) => {
   const [posts, setPosts] = useState([]);
   const navigate = useNavigate();
-  const dispatch = useDispatch();
 
   useEffect(() => {
     getBlogs();
   }, []);
 
   const getBlogs = async () => {
-    var response = await fetch(BLOGS_URL);
+    var response = await customFetch(BLOGS_URL);
     if (!response.ok) {
       setPosts([]);
       return;

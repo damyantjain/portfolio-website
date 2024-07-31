@@ -2,9 +2,9 @@ import { getAccessToken, isTokenExpired } from "./tokenService";
 import { refreshAccessToken } from "./commonAPI";
 
 const customFetch = async (url, options = {}) => {
-  const accessToken = getAccessToken();
-  if (isTokenExpired(accessToken)) {
-    const token = refreshAccessToken();
+  var token = getAccessToken();
+  if (isTokenExpired(token)) {
+    token = refreshAccessToken();
     if (!token) {
       window.location.href = "/login";
       return;

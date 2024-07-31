@@ -1,5 +1,6 @@
 import { REFRESH_TOKEN, BLOGS_URL } from "./constants";
 import { setAccessToken, removeAccessToken } from "./tokenService";
+import customFetch from "./customFetch";
 
 export const refreshAccessToken = async () => {
   const response = await fetch(REFRESH_TOKEN, {
@@ -20,7 +21,7 @@ export const refreshAccessToken = async () => {
 };
 
 const createBlog = async (editedBlog, publish) => {
-  const response = await fetch(BLOGS_URL, {
+  const response = await customFetch(BLOGS_URL, {
     method: "POST",
     headers: {
       "Content-Type": "application/json",
@@ -32,7 +33,7 @@ const createBlog = async (editedBlog, publish) => {
 };
 
 const updateBlog = async (editedBlog, publish) => {
-  const response = await fetch(`${BLOGS_URL}/${editedBlog._id}`, {
+  const response = await customFetch(`${BLOGS_URL}/${editedBlog._id}`, {
     method: "PUT",
     headers: {
       "Content-Type": "application/json",
