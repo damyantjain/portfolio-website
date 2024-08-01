@@ -5,7 +5,7 @@ const blogSlice = createSlice({
   name: "blogSlice",
   initialState: {
     blog: { title: "", description: "" },
-    editedBlog: { title: "", description: "", image:"", contentBlocks: [] },
+    editedBlog: { title: "", description: "", image: "", contentBlocks: [] },
   },
   reducers: {
     //blog
@@ -51,6 +51,9 @@ const blogSlice = createSlice({
         (x) => x._id !== action.payload
       );
     },
+    reorderBlocks: (state, action) => {
+      state.editedBlog.contentBlocks = action.payload;
+    },
   },
 });
 export const {
@@ -62,5 +65,6 @@ export const {
   deleteBlock,
   updateCaption,
   updatePreviewImage,
+  reorderBlocks,
 } = blogSlice.actions;
 export default blogSlice.reducer;
