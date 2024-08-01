@@ -41,7 +41,6 @@ const BlogView = () => {
             year: "numeric",
           })}
         </p>
-        <img src={blog.image} className="object-cover rounded-lg mt-4" />
         <BlogContent blog={blog} />
       </div>
     </div>
