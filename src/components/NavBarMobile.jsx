@@ -1,4 +1,5 @@
-import { Link } from "react-scroll";
+import { Link as ScrollLink } from "react-scroll";
+import { Link } from "react-router-dom";
 import useCalculateDuration from "../util/useCalculateDuration";
 import { useContext } from "react";
 import ThemeContext from "../context/ThemeContext";
@@ -10,9 +11,9 @@ const NavBarMobile = ({ nav, isOpen, setIsOpen }) => {
   };
 
   const handleThemeToggle = () => {
-    setDarkMode(!darkMode)
+    setDarkMode(!darkMode);
     toggleMenu();
-  }
+  };
 
   if (isOpen) {
     return (
@@ -26,14 +27,18 @@ const NavBarMobile = ({ nav, isOpen, setIsOpen }) => {
         <ul className="font-poppins text-[#333333] text-2xl space-y-6 dark:text-[#e0e0e0]">
           {nav.map((item, index) => (
             <li key={index} className="transition-colors hover:text-[#9d9d9d]">
-              <Link
-                onClick={toggleMenu}
-                to={item.link}
-                smooth="easeInOutQuad"
-                duration={() => useCalculateDuration(`#${item.link}`)}
-              >
-                {item.title}
-              </Link>
+              {item.external ? (
+                <Link onClick={toggleMenu} to={item.link}>{item.title}</Link>
+              ) : (
+                <ScrollLink
+                  onClick={toggleMenu}
+                  to={item.link}
+                  smooth="easeInOutQuad"
+                  duration={() => useCalculateDuration(`#${item.link}`)}
+                >
+                  {item.title}
+                </ScrollLink>
+              )}
             </li>
           ))}
         </ul>
