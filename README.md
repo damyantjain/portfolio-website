@@ -22,8 +22,7 @@ Welcome to my portfolio and blog website! This is where I showcase my projects, 
 
 Feel free to connect with me through the following channels:
 
-- **LinkedIn**: [Damyant Jain](https://www.linkedin.com/in/damyantjain)
-- **GitHub**: [DamyantJain](https://github.com/damyantjain)
+- **LinkedIn**: [Damyant Jain](https://www.linkedin.com/in/damyant)
 - **Email**: jain.dam@northeastern.edu
 
 Check out my portfolio at: [https://damyantjain.com](https://damyantjain.com)
