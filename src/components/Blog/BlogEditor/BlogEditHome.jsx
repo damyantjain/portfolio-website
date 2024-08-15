@@ -27,14 +27,6 @@ const BlogEditHome = ({ mode }) => {
   const editedBlog = useSelector((state) => state.blog.editedBlog);
 
   const handleNewBlog = () => {
-    // var response = fetch(BLOGS_URL, {
-    //   method: "POST",
-    //   headers: {
-    //     "Content-Type": "application/json",
-    //   },
-    //   body: JSON.stringify({ title: "New Blog", description: "" }),
-    // });
-    //const newId = uuidv4();
     navigate(`/blog/edit/new`);
   };
 
