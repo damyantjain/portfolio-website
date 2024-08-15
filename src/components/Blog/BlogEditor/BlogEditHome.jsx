@@ -2,7 +2,6 @@ import { useEffect, useState } from "react";
 import { BLOGS_URL } from "../../../util/constants";
 import BlogCardList from "../BlogCardList";
 import { useNavigate } from "react-router-dom";
-import { useSelector } from "react-redux";
 import customFetch from "../../../util/customFetch";
 
 const BlogEditHome = ({ mode }) => {
@@ -23,8 +22,6 @@ const BlogEditHome = ({ mode }) => {
       setPosts(data);
     }
   };
-
-  const editedBlog = useSelector((state) => state.blog.editedBlog);
 
   const handleNewBlog = () => {
     navigate(`/blog/edit/new`);
