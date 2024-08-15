@@ -1,11 +1,16 @@
 import { createSlice } from "@reduxjs/toolkit";
 import { v4 as uuidv4 } from "uuid";
 
+const initialState = {
+  blog: { title: "", description: "" },
+  editedBlog: { title: "", description: "", image: "", contentBlocks: [], keywords: "" },
+};
+
 const blogSlice = createSlice({
   name: "blogSlice",
   initialState: {
     blog: { title: "", description: "" },
-    editedBlog: { title: "", description: "", image: "", contentBlocks: [] },
+    editedBlog: { title: "", description: "", image: "", contentBlocks: [], keywords: "" },
   },
   reducers: {
     //blog
@@ -22,6 +27,9 @@ const blogSlice = createSlice({
     updatePreviewImage: (state, action) => {
       state.editedBlog.image = action.payload;
     },
+    updateKeywords: (state, action) => {
+      state.editedBlog.keywords = action.payload;
+    },
 
     updateContent: (state, action) => {
       var index = state.editedBlog.contentBlocks.findIndex(
@@ -36,6 +44,9 @@ const blogSlice = createSlice({
       );
 
       state.editedBlog.contentBlocks[index].caption = action.payload.caption;
+    },
+    resetEditedBlog: (state) => {
+      state.editedBlog = initialState.editedBlog;
     },
 
     //block
@@ -65,6 +76,8 @@ export const {
   deleteBlock,
   updateCaption,
   updatePreviewImage,
+  updateKeywords,
   reorderBlocks,
+  resetEditedBlog
 } = blogSlice.actions;
 export default blogSlice.reducer;

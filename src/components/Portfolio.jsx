@@ -5,11 +5,27 @@ import Resume from "./Resume";
 import Contact from "./Contact";
 import NavBar from "./NavBar";
 import nav from "../db/nav";
+import { Helmet } from 'react-helmet';
 
 const Portfolio = () => {
   return (
     <div>
-      <NavBar nav={nav}/>
+      <Helmet>
+        <title>Damyant Jain</title>
+        <meta name="description" content="Damyant Jain's portfolio and blog" />
+        <meta
+          name="keywords"
+          content="Damyant Jain, portfolio, blog, React, developer, resume, programmer"
+        />
+        <meta property="og:title" content="Damyant Jain" />
+        <meta
+          property="og:description"
+          content="Damyant Jain's portfolio and blog"
+        />
+        <meta property="og:type" content="website" />
+        <meta property="og:url" content="https://damyantjain.com/" />
+      </Helmet>
+      <NavBar nav={nav} />
       <div className="mx-5 md:mx-24 mb-5 lg:mx-44 dark:bg-[#121212]">
         <div id="home" className="md:pt-24">
           <Intro />

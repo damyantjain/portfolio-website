@@ -2,13 +2,14 @@ import { useEffect } from "react";
 import { BLOGS_URL } from "../../../util/constants";
 import { useParams } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
-import { addBlog } from "../../../store/blogSlice";
+import { addBlog, resetEditedBlog } from "../../../store/blogSlice";
 import DescriptionEditor from "./DescriptionEditor";
 import TitleEditor from "./TitleEditor";
 import BlogContent from "./BlogContent";
 import PreviewImageEditor from "./PreviewImageEditor";
 import { useNavigate } from "react-router-dom";
 import { saveBlog } from "../../../util/commonAPI";
+import KeywordsEditor from "./KeywordsEditor";
 
 const BlogEditHome = () => {
   const navigate = useNavigate();
@@ -45,6 +46,9 @@ const BlogEditHome = () => {
         })
       );
     }
+    return () => {
+      dispatch(resetEditedBlog());
+    };
   }, []);
 
   const getBlog = async () => {
@@ -74,6 +78,7 @@ const BlogEditHome = () => {
         <TitleEditor />
         <DescriptionEditor />
         <PreviewImageEditor />
+        <KeywordsEditor />
       </div>
       <BlogContent />
     </div>
