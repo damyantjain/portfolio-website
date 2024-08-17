@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
-import { BLOGS_URL, PUBLISHED_BLOGS } from "../../util/constants";
+import { PUBLISHED_BLOGS } from "../../util/constants";
 import BlogCardList from "./BlogCardList";
+import BlogListShimmer from "./BlogListShimmer";
 
 const BlogHome = () => {
   const [posts, setPosts] = useState([]);
@@ -28,7 +29,11 @@ const BlogHome = () => {
         <h1 className="text-xl md:text-2xl text-[#333333] dark:text-[#e0e0e0] font-poppins mt-5 mb-10">
           Reads
         </h1>
-        <BlogCardList posts={posts} />
+        {posts === null || posts.length === 0 ? (
+          <BlogListShimmer />
+        ) : (
+          <BlogCardList posts={posts} />
+        )}
       </div>
     </div>
   );
