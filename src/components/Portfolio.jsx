@@ -12,7 +12,9 @@ const Portfolio = () => {
     <div>
       <Helmet>
         <title>Damyant Jain</title>
-        <meta name="description" content="Damyant Jain's portfolio and blog" />
+        <meta name="description" content="I'm all about turning cool ideas into awesome products and exploring
+            the ever-evolving tech world. With over 3 years of experience, I'm passionate about solving real-world problems. When I'm
+            not coding, you can find me enjoying sports." />
         <meta
           name="keywords"
           content="Damyant Jain, portfolio, blog, React, developer, resume, programmer"
@@ -20,7 +22,9 @@ const Portfolio = () => {
         <meta property="og:title" content="Damyant Jain" />
         <meta
           property="og:description"
-          content="Damyant Jain's portfolio and blog"
+          content="I'm all about turning cool ideas into awesome products and exploring
+            the ever-evolving tech world. With over 3 years of experience, I'm passionate about solving real-world problems. When I'm
+            not coding, you can find me enjoying sports."
         />
         <meta property="og:type" content="website" />
         <meta property="og:url" content="https://damyantjain.com/" />
