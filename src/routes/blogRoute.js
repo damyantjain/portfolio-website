@@ -31,7 +31,7 @@ const blogRoute = {
           element: <ProtectedRoute children={<BlogEditor />} />,
         },
         {
-          path: ":id",
+          path: ":titleAndId",
           children: [
             {
               path: "",
@@ -46,7 +46,7 @@ const blogRoute = {
       ],
     },
     {
-      path: ":id",
+      path: ":titleAndId",
       element: <BlogView />,
     },
   ],

@@ -1,10 +1,15 @@
 import { BASE_URL } from "../../util/constants";
 import { Link } from "react-router-dom";
+
+const formatTitleForURL = (title) => {
+  return title.toLowerCase().replace(/\s+/g, '-');
+};
+
 const BlogCard = ({ post }) => {
   return (
     <div>
-      <Link to={post._id}>
-        <div className="flex justify-between hover:cursor-pointer">
+    <Link to={`${formatTitleForURL(post?.title)}-${post._id}`}>
+    <div className="flex justify-between hover:cursor-pointer">
           <div>
             <h2 className="text-xl md:text-2xl text-[#333333] dark:text-[#e0e0e0] font-bold">
               {post?.title}

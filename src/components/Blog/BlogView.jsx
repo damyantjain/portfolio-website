@@ -5,7 +5,8 @@ import BlogContent from "./BlogContent";
 import { Helmet } from 'react-helmet';
 
 const BlogView = () => {
-  const { id } = useParams();
+  const { titleAndId } = useParams();
+  const id = titleAndId.split('-').pop();
 
   const [blog, setBlog] = useState({});
   const [blogNotFound, setBlogNotFound] = useState(false);
