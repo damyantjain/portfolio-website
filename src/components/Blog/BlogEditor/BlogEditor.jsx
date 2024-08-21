@@ -14,7 +14,7 @@ import KeywordsEditor from "./KeywordsEditor";
 const BlogEditHome = () => {
   const navigate = useNavigate();
   const { titleAndId } = useParams();
-  const id = titleAndId.split("-").pop();
+  const id = titleAndId?.split("-").pop();
   const dispatch = useDispatch();
   const editedBlog = useSelector((state) => state.blog.editedBlog);
 
@@ -36,7 +36,7 @@ const BlogEditHome = () => {
   };
 
   useEffect(() => {
-    if (id) {
+    if (titleAndId) {
       getBlog();
     } else {
       dispatch(
