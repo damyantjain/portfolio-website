@@ -1,10 +1,31 @@
 import experience from "../db/experience";
+import external_black from "../assets/svg/external_black.svg";
+import external_white from "../assets/svg/external_white.svg";
+import { useContext } from "react";
+import ThemeContext from "../context/ThemeContext";
 
 const Experience = () => {
+  const { darkMode, setDarkMode } = useContext(ThemeContext);
+
+  const viewResume = () => {
+    window.open(
+      "https://drive.google.com/file/d/1XGQgtPm6wX49llDd2oHPsVZFfz4CRiah/view?usp=sharing",
+      "_blank"
+    );
+  };
+
   return (
     <div className="mt-10">
-      <div className="font-poppins mb-10 text-2xl text-[#333333] dark:text-[#e0e0e0]">
-        Experience
+      <div className="font-poppins flex justify-between mb-10 text-2xl text-[#333333] dark:text-[#e0e0e0]">
+        <div>Experience</div>
+        <div>
+          <button onClick={() => viewResume()}>
+            <img
+              className="h-8 w-8"
+              src={darkMode ? external_white : external_black}
+            />
+          </button>
+        </div>
       </div>
       <div>
         {experience.map((exp, index) => (
@@ -17,14 +38,20 @@ const Experience = () => {
                 <div className="font-bold md:text-lg text-[#333333] dark:text-[#e0e0e0]">
                   {exp.company}
                 </div>
-                <div className="text-sm text-gray-500 dark:text-gray-400">{exp.position}</div>
-                <div className="text-sm text-gray-500 dark:text-gray-400">{exp.location}</div>
+                <div className="text-sm text-gray-500 dark:text-gray-400">
+                  {exp.position}
+                </div>
+                <div className="text-sm text-gray-500 dark:text-gray-400">
+                  {exp.location}
+                </div>
               </div>
               <div className="md:w-3/12 text-sm md:text-end text-gray-500 dark:text-gray-400">
                 {exp.duration}
               </div>
             </div>
-            <div className="mt-2 text-gray-500 dark:text-gray-400">{exp.description}</div>
+            <div className="mt-2 text-gray-500 dark:text-gray-400">
+              {exp.description}
+            </div>
           </div>
         ))}
       </div>
