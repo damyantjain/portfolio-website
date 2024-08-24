@@ -6,8 +6,18 @@ import Contact from "./Contact";
 import NavBar from "./NavBar";
 import nav from "../db/nav";
 import { Helmet } from 'react-helmet';
+import { useEffect } from "react";
+import { UPDATE_VIEWS } from "../util/constants.js";
 
 const Portfolio = () => {
+
+  useEffect(() => {
+    fetch(UPDATE_VIEWS, {
+      method: "POST",
+    });
+  }, []);
+
+
   return (
     <div>
       <Helmet>
