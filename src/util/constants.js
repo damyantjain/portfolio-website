@@ -4,8 +4,6 @@ export const API_URL = `${BASE_URL}/api`;
 //portfolio
 export const UPDATE_VIEWS = `${API_URL}/analytics/home-visitor-count`;
 
-
-
 // blog
 export const BLOGS_URL = `${API_URL}/blogs`;
 export const PUBLISHED_BLOGS = `${API_URL}/publishedblogs`;
