@@ -1,20 +1,6 @@
+import education from "../db/education";
+
 const Education = () => {
-  const education = [
-    {
-      university: "Northeastern University",
-      location: "Boston, Massachusetts",
-      degree: "MS Computer Science",
-      duration: "2023 - Expected Dec 2025",
-      major: "Computer Science",
-    },
-    {
-      university: "Vellore Institute of Technology",
-      location: "Vellore, Tamil Nadu",
-      degree: "B.Tech Computer Science",
-      duration: "2016-2020",
-      major: "Computer Science",
-    },
-  ];
 
   return (
     <div className="mt-10">
@@ -32,6 +18,7 @@ const Education = () => {
                 <div className="font-bold text-[#333333] dark:text-[#e0e0e0] md:text-lg">
                   {edu.university}
                 </div>
+                <div className="text-sm dark:text-gray-400 text-gray-500">{edu.school}</div>
                 <div className="text-sm dark:text-gray-400 text-gray-500">{edu.degree}</div>
                 <div className="text-sm dark:text-gray-400 text-gray-500">{edu.location}</div>
               </div>
