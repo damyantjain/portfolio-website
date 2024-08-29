@@ -19,7 +19,7 @@ const Experience = () => {
       <div className="font-poppins flex justify-between mb-10 text-2xl text-[#333333] dark:text-[#e0e0e0]">
         <div>Experience</div>
         <div>
-          <button onClick={() => viewResume()}>
+          <button title="View Resume" onClick={() => viewResume()}>
             <img
               className="h-8 w-8"
               src={darkMode ? external_white : external_black}
