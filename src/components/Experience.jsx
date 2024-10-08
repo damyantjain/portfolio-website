@@ -49,9 +49,11 @@ const Experience = () => {
                 {exp.duration}
               </div>
             </div>
-            <div className="mt-2 text-gray-500 dark:text-gray-400">
-              {exp.description}
-            </div>
+            <ul className="mt-2 text-gray-500 dark:text-gray-400 list-disc list-inside">
+              {exp.description.map((item, i) => (
+                <li key={i}>{item}</li>
+              ))}
+            </ul>
           </div>
         ))}
       </div>
