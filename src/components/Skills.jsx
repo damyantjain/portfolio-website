@@ -48,7 +48,7 @@ const Skills = () => {
           <div key={index} className="mb-10">
             <div className="flex flex-col md:flex-row gap-4">
               <div className="md:w-4/12 lg:w-3/12 flex items-center">
-                <div className="font-poppins dark:text-[#e0e0e0] text-[#333333] text-xl whitespace-nowrap">
+                <div className="font-poppins md:ml-3 dark:text-[#e0e0e0] text-[#333333] text-xl whitespace-nowrap">
                   {skillCategory.title}
                 </div>
               </div>
