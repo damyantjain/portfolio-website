@@ -4,8 +4,8 @@ const skillList = [
     {
       title: "Languages",
       skills: [
-        { name: "JavaScript", imageUrlName: "javascript" },
         { name: "C#", imageUrlName: "csharp" },
+        { name: "JavaScript", imageUrlName: "javascript" },
         { name: "Java", imageUrlName: "java" },
         { name: "Python", imageUrlName: "python" },
       ],
