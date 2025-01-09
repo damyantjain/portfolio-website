@@ -1,5 +1,12 @@
 const experience = [
   {
+    company: "Philips",
+    position: "Software Development Co-op",
+    location: "Cambridge, MA",
+    duration: "Jan 2024 - Present",
+    description: [""]
+  },
+  {
     company: "West Pharmaceuticals Services",
     position: "Software Engineer (Cross platform – Full stack application developer)",
     location: "Bangalore, India",
