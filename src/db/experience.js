@@ -3,8 +3,8 @@ const experience = [
     company: "Philips",
     position: "Software Development Co-op",
     location: "Cambridge, MA",
-    duration: "Jan 2024 - Present",
-    description: [""]
+    duration: "Jan 2025 - Present",
+    description: []
   },
   {
     company: "West Pharmaceuticals Services",
