@@ -2,6 +2,8 @@
 
 Welcome to my portfolio and blog website! This is where I showcase my projects, share my knowledge, and write about my experiences in technology and development.
 
+[https://damyantjain.com](https://damyantjain.com)
+
 ## Technologies Used
 
 - **Frontend**: React.js, TailwindCSS
