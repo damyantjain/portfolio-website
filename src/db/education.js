@@ -4,7 +4,7 @@ const education = [
     school: "Khoury College of Computer Sciences",
     location: "Boston, Massachusetts",
     degree: "MS Computer Science",
-    duration: "2023 - Dec 2025",
+    duration: "2023 - Expected Dec 2025",
     major: "Computer Science",
   },
   {
