@@ -4,7 +4,9 @@ const experience = [
     position: "Software Development Co-op",
     location: "Cambridge, MA",
     duration: "Jan 2025 - Present",
-    description: []
+    description: [
+      "Developed an automated tool to generate Release Requirement Documents, extracting data from Azure DevOps and producing 96 PDFs, reducing manual effort by 90% and cutting processing time from hours to minutes."
+    ],
   },
   {
     company: "West Pharmaceuticals Services",
