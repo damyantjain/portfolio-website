@@ -5,7 +5,7 @@ const experience = [
     location: "Cambridge, MA",
     duration: "Jan 2025 - Present",
     description: [
-      "Developed an automated tool to generate Release Requirement Documents, extracting data from Azure DevOps and producing 96 PDFs, reducing manual effort by 90% and cutting processing time from hours to minutes."
+      "Developed a tool to generate Requirement Documents, extracting data from Azure DevOps and producing 96 PDFs, reducing manual effort by 90% and cutting processing time from hours to minutes."
     ],
   },
   {
