@@ -42,6 +42,20 @@ const projects = [
 
     link: "https://github.com/damyantjain/WPF-Customer-App",
   },
+  {
+    title: "useFormAutoSave",
+    description:
+      "A lightweight, customizable React hook that automatically saves form data to prevent loss during user sessions. Provides configurable save intervals, state persistence, and seamless integration with form libraries.",
+    image: "useFormAutoSave",
+    link: "https://github.com/damyantjain/use-form-auto-save",
+  },
+  {
+    title: "Portfolio Website",
+    description:
+      "A responsive personal portfolio built with React, Tailwind CSS, and Framer Motion. Features interactive animations, dark mode support, and a clean, modern design to showcase my projects and skills.",
+    image: "portfolio",
+    link: "https://github.com/damyantjain/portfolio-website",
+  }
 ];
 
 export default projects;
