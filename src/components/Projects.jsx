@@ -3,7 +3,6 @@ import { motion } from "framer-motion";
 import projects from "../db/projects";
 import ProjectCard from "./ProjectCard";
 
-
 const Projects = () => {
   const { ref, inView } = useInView({
     threshold: 0.3,
@@ -30,7 +29,7 @@ const Projects = () => {
     >
       <div className="text-center font-poppins">My Projects</div>
       <motion.div
-        className="lg:grid lg:grid-cols-2 lg:gap-8 mt-4 md:mt-20"
+        className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mt-4 md:mt-20"
         initial="hidden"
         animate={inView ? "visible" : "hidden"}
         variants={containerVariants}
