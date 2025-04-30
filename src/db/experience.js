@@ -7,6 +7,7 @@ const experience = [
     description: [
       "Streamlined GitHub workflows to implement Continuous Integration (CI) on pull requests, with smoke testing and linting.",
       "Developed and owned an automated tool to generate Release Requirement Documents, extracting data from Azure DevOps.",
+      "Reduced document processing time from days to minutes (99% reduction) by automating revision history tracking, delta generation, and structured upload to Azure DevOps"
     ],
   },
   {
