@@ -5,7 +5,8 @@ const experience = [
     location: "Cambridge, MA",
     duration: "Jan 2025 - Present",
     description: [
-      "Streamlined GitHub workflows to implement Continuous Integration (CI) on pull requests, with smoke testing and linting."
+      "Streamlined GitHub workflows to implement Continuous Integration (CI) on pull requests, with smoke testing and linting.",
+      "Developed and owned an automated tool to generate Release Requirement Documents, extracting data from Azure DevOps.",
     ],
   },
   {
