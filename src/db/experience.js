@@ -5,7 +5,9 @@ const experience = [
     location: "Cambridge, MA",
     duration: "Jan 2025 - Present",
     description: [
-      "Developed a tool to generate Requirement Documents, extracting data from Azure DevOps and producing 96 PDFs, reducing manual effort by 90% and cutting processing time from hours to minutes."
+      "Streamlined GitHub workflows to implement Continuous Integration (CI) on pull requests, with smoke testing and linting.",
+      "Developed and owned an automated tool to generate Release Requirement Documents, extracting data from Azure DevOps.",
+      "Reduced document processing time from days to minutes (99% reduction) by automating revision history tracking, delta generation, and structured upload to Azure DevOps"
     ],
   },
   {
