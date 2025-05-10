@@ -11,11 +11,11 @@ import { UPDATE_VIEWS } from "../util/constants.js";
 
 const Portfolio = () => {
 
-  useEffect(() => {
-    fetch(UPDATE_VIEWS, {
-      method: "POST",
-    });
-  }, []);
+  // useEffect(() => {
+  //   fetch(UPDATE_VIEWS, {
+  //     method: "POST",
+  //   });
+  // }, []);
 
 
   return (

@@ -17,13 +17,13 @@ const nav = [
   },
   {
     title: "Contact",
-    link: "contact",  
+    link: "contact",
   },
-  {
-    title: "Blog",
-    link: "blog",
-    external: true, 
-  }
+  // {
+  //   title: "Blog",
+  //   link: "blog",
+  //   external: true,
+  // }
 ];
 
 export default nav;
