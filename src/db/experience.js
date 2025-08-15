@@ -14,7 +14,7 @@ const experience = [
   },
   {
     company: "West Pharmaceutical Services",
-    position: "Software Engineer (Cross platform – Full stack application developer)",
+    position: "Software Engineer",
     location: "Bengaluru, India",
     duration: "Oct 2022 – July 2023",
     description: [
@@ -39,7 +39,7 @@ const experience = [
   },
   {
     company: "West Pharmaceutical Services",
-    position: "Trainee Software Engineer",
+    position: "Graduate Software Engineer",
     location: "Bengaluru, India",
     duration: "Jan 2020 – July 2020",
     description: [
