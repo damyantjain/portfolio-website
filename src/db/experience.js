@@ -5,9 +5,9 @@ const experience = [
     location: "Cambridge, MA",
     duration: "Jan 2025 – Present",
     description: [
-      "Architected and engineered a side-by-side installation framework for PIC-iX (WinForms/.NET) enabling concurrent patch deployment, reducing production downtime by 65%+.",
+      "Architected and engineered a side-by-side installation for PIC-iX (WinForms/.NET) enabling concurrent patch deployment, reducing production downtime by 65%.",
       "Developed a Python-based automation tool to generate Release Requirement Documents by programmatically ingesting, transforming, and validating Azure DevOps work item data, ensuring accuracy and consistency across releases.",
-      "Reduced document processing time from days to minutes (99% reduction) by automating revision history tracking, delta generation, and structured upload to Azure DevOps",
+      "Reduced document processing time from days to minutes (99% reduction) by automating revision history, delta generation, and structured upload to DevOps",
       "Streamlined CI pipelines by enhancing GitHub workflows to run automated smoke tests and linting on pull requests.",
       "Created workflows to enhance developer experience, like flagging unused NuGet package references of .NET projects."
     ],
@@ -33,7 +33,7 @@ const experience = [
       "Designed and implemented a Digital Manufacturing application using .NET framework, Xamarin.Forms and MAUI",
       "Followed MVVM architecture and Object-Oriented Programming (OOP) for creating robust application.",
       "Implemented design patterns such as Command, Decorator, and Builder to enhance the software architecture.",
-      "Integrated MQTT brokers with backend services to stream live sensor and machine data into PostgreSQL-backed queues, achieving sub-second processing for shop-floor dashboards.",
+      "Integrated MQTT brokers with backend services to stream live sensor data into PostgreSQL-backed queues, achieving sub-second processing for shop-floor dashboards.",
       "Implemented a SignalR-based connection to efficiently route orders across the manufacturing plant."
     ],
   },
