@@ -9,7 +9,7 @@ const Experience = () => {
 
   const viewResume = () => {
     window.open(
-      "https://drive.google.com/file/d/1XGQgtPm6wX49llDd2oHPsVZFfz4CRiah/view?usp=sharing",
+      "https://drive.google.com/file/d/1r-rFWGjE1SSHM-x6_2ZXL-BrtP2hwVGs/view?usp=drive_link",
       "_blank"
     );
   };
