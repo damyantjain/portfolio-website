@@ -5,6 +5,8 @@ import jiffyImg from "../assets/project/jiffy.png";
 import admitlyImg from "../assets/project/admitly.png";
 import useFormAutoSaveImg from "../assets/project/useFormAutoSave.png";
 import portfolioImg from "../assets/project/portfolio.png";
+import coralcakeImg from "../assets/project/coralcake.png";
+import neatmeetImg from "../assets/project/neatmeet.png";
 import { useContext } from "react";
 import ThemeContext from "../context/ThemeContext";
 
@@ -18,6 +20,8 @@ const ProjectCard = ({ project }) => {
     admitly: admitlyImg,
     useFormAutoSave: useFormAutoSaveImg,
     portfolio: portfolioImg,
+    coralcake: coralcakeImg,
+    neatmeet: neatmeetImg,
   };
 
   const itemVariants = {
