@@ -55,6 +55,21 @@ const projects = [
       "A responsive personal portfolio built with React, Tailwind CSS, and Framer Motion. Features interactive animations, dark mode support, and a clean, modern design to showcase my projects and skills.",
     image: "portfolio",
     link: "https://github.com/damyantjain/portfolio-website",
+  },
+  {
+    title: "CoralCake",
+    description:
+      "A benchmarking platform for Large Language Models (LLMs). Run a single prompt across multiple LLMs (OpenAI, Mistral, etc.) and compare latency, token usage, and cost in real time. Export results as CSV/JSON and review historical runs side-by-side to pick the best model for your use case.",
+    image: "coralcake",
+    link: "https://github.com/damyantjain/CoralCake",
+    demo: "https://coralcake.vercel.app",
+  },
+  {
+    title: "NeatMeet",
+    description:
+      "A community event discovery app that allows users to explore events happening around them, filter events by location, search for events, and interact with the event community through voting and creating events.",
+    image: "neatmeet",
+    link: "https://github.com/damyantjain/NeatMeet",
   }
 ];
 
